@@ -13,3 +13,4 @@ __pycache__/
 PROJETO_SERINGA_AI_v*_release_*.zip
 frontend/tsconfig.tsbuildinfo
 scripts/*.log
+Backups/
