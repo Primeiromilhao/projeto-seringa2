@@ -1,0 +1,13 @@
+﻿PROJETO SERINGA AI - RELEASE MANIFEST
+Release: 0.2.1
+Release ID: PROJETO_SERINGA_AI_v0.2.1_release_20260909
+Date: 2026-09-09
+Status: TECHNICAL RELEASE CANDIDATE
+Backend tests: 19 passed
+E2E tests: 3 passed
+Frontend production build: PASS
+Python compileall: PASS
+Authentication and user-scope controls: PASS
+Security release gates: PASS
+Clinical/regulatory status: NOT CLINICAL AUTHORIZATION
+Important: software visual verification is decision support only and does not authorize physical administration.

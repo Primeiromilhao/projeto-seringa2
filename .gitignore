@@ -1,0 +1,15 @@
+.env
+.env.*.local
+backend/data/
+data/*.db
+backend/pip_install.log
+frontend/.next/
+frontend/node_modules/
+frontend/test-results/
+frontend/*.log
+__pycache__/
+*.pyc
+*.bak_*
+PROJETO_SERINGA_AI_v*_release_*.zip
+frontend/tsconfig.tsbuildinfo
+scripts/*.log

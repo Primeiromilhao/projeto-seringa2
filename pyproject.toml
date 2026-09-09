@@ -1,0 +1,20 @@
+[project]
+name = "syringe-ai-core"
+version = "0.1.0"
+description = "Provider-neutral AI core for the syringe project"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31,<3"]
+
+[project.scripts]
+syringe-ai = "syringe_ai.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "backend/tests"]
+pythonpath = ["src", "backend"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
