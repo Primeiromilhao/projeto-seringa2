@@ -1,3 +1,13 @@
-self.addEventListener('install',()=>self.skipWaiting());
-self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
-self.addEventListener('fetch',()=>{});
+const CACHE='seringa-v2';
+const BASE='/projeto-seringa2/';
+const APP=[BASE,BASE+'manifest.webmanifest'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(APP)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{
+  const req=event.request;
+  if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;
+  event.respondWith(fetch(req).then(res=>{
+    if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy));}
+    return res;
+  }).catch(()=>caches.match(req).then(r=>r||caches.match(BASE))));
+});
