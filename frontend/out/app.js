@@ -115,7 +115,7 @@
   function activatePro() {
     const key = $('proKey').value.trim().toUpperCase(); const msg = $('activationMessage');
     // Validação offline local: chave de produção pode ser trocada por integração futura.
-    const valid = /^SERINGA-PREMIUM-[A-Z0-9]{6,}$/.test(key);
+    const valid = key === 'DBA66369';
     if (!valid) { msg.textContent = 'Chave inválida. Confira a chave e tente novamente.'; msg.className = 'activation-message bad'; return; }
     if (storage.setFlag(KEYS.pro, true)) { msg.textContent = '✓ Seringa Pro desbloqueado neste dispositivo.'; msg.className = 'activation-message good'; updateProUI(); showToast('â Seringa Pro ativado!', true); }
     else { msg.textContent = 'Não foi possível guardar a ativação localmente.'; msg.className = 'activation-message bad'; }
