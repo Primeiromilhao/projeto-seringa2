@@ -116,6 +116,7 @@
     $('proBadge').hidden = !active;
     $('premiumDashboard').hidden = !active;
     $('premiumActivation').hidden = active;
+    const plans = document.querySelector('.plans'); if (plans) plans.hidden = active;
     document.body.classList.toggle('premium-active', active);
     const nav = document.querySelector('[data-tab="pro"]');
     if (nav) nav.innerHTML = active ? '⭐<span>Premium Ativo</span>' : '⭐<span>Seringa Premium</span>';
