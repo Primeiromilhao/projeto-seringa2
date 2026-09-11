@@ -72,6 +72,7 @@
 
   function recalculate() {
     const result = calculateVolume($('dose').value, $('conc').value);
+    $('check').classList.toggle('has-result', Boolean(result));
     $('volume').textContent = result ? `${result.text} mL` : '—'; $('math').textContent = result ? 'Cálculo exato com inteiros escalados; arredondamento somente na apresentação.' : 'Preencha dose e concentração para visualizar.'; updateRuler(result); return result;
   }
 

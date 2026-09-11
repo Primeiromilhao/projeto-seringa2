@@ -1,0 +1,14 @@
+{
+  "name": "SERINGA",
+  "short_name": "SERINGA",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F0F7F6",
+  "theme_color": "#1B6B63",
+  "description": "Conferência acolhedora, local e privada.",
+  "categories": ["health", "medical"],
+  "prefer_related_applications": false,
+  "icons": []
+}
