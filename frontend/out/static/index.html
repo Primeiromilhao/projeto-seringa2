@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#F0F7F6">
+  <meta name="description" content="SERINGA â€” conferÃªncia acolhedora, local e privada.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>SERINGA â€” ConferÃªncia</title>
+  <link rel="stylesheet" href="styles.css?v=3.0">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">ðŸ’‰</div><div><h1>SERINGA</h1><p>Uma conferÃªncia de cada vez, com calma.</p></div></div>
+  <span class="privacy">ðŸ”’ 100% Offline &amp; Privado</span>
+  <button id="installBanner" class="install" type="button">ðŸ“² <span><b>Baixar Aplicativo para o Celular</b><small>Funciona sem Internet</small></span>â€º</button>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="hero-kicker">SERINGA</span><h2>Mais calma. Mais clareza. Uma etapa de cada vez.</h2><p>Uma experiÃªncia simples para conferir, registrar e acompanhar â€” diretamente no seu celular.</p><button id="startNow" class="primary hero-cta">ðŸ’‰ Iniciar Minha ConferÃªncia Agora</button></div>
+  <div class="phone"><div class="phone-screen"><div class="phone-top"><span>SERINGA</span><small>â—</small></div><div class="slides" id="heroSlides"><article class="slide active"><small>RÃ‰GUA VISUAL</small><strong>Veja o volume com clareza</strong><svg viewBox="0 0 240 100" aria-hidden="true"><rect x="20" y="32" width="200" height="28" rx="9" class="demo-body"/><rect id="demoFill" x="20" y="32" width="96" height="28" rx="9" class="demo-fill"/><rect x="112" y="25" width="7" height="42" rx="3" class="demo-plunger"/></svg><p>0,25 mL visualizado</p></article><article class="slide"><small>RESPIRAÃ‡ÃƒO 4-7-8</small><strong>Respire e desacelere</strong><div class="demo-breath">ðŸ«<b>4</b></div><p>Uma pausa antes de continuar.</p></article><article class="slide"><small>HISTÃ“RICO</small><strong>Veja sua jornada</strong><div class="demo-history"><span>âœ“ 10 set Â· 0,25 mL</span><span>âœ“ 08 set Â· 0,30 mL</span><span>ðŸ§­ PrÃ³ximo local</span></div></article></div><div class="dots" id="heroDots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div></div></div>
+</section>
+<section class="feature-strip" aria-label="BenefÃ­cios rÃ¡pidos"><article><span>ðŸ“</span><b>ConferÃªncia Visual</b><small>Veja com clareza</small></article><article><span>ðŸ«</span><b>MÃ£o Firme</b><small>Respire antes</small></article><article><span>ðŸ§­</span><b>ProteÃ§Ã£o da Pele</b><small>Organize o rodÃ­zio</small></article><article><span>ðŸ”’</span><b>100% Privado</b><small>Local-first</small></article></section>
+<section id="check" class="tab active">
+  <div class="welcome"><span id="greeting">OlÃ¡!</span><h2>Vamos fazer sua conferÃªncia?</h2><p>Sem pressa. Confira cada etapa no seu ritmo.</p></div>
+  <article id="todayStatus" class="status pending"><span class="status-icon">â³</span><div><small>Status de Hoje</small><strong id="todayTitle">ConferÃªncia pendente</strong><p id="todayText">Ainda nÃ£o hÃ¡ uma aplicaÃ§Ã£o registrada hoje.</p></div></article>
+  <section><div class="section-head"><small>SERINGA ajuda vocÃª</small><h3>Pequenos apoios durante a conferÃªncia</h3></div>
+    <div class="benefits">
+      <article><i>ðŸ“</i><div><h4>RÃ©gua Visual Comparativa</h4><p>Visualize o volume de forma simples antes de confirmar.</p></div></article>
+      <article><i>ðŸ«</i><div><h4>Respire e Desacelere 4-7-8</h4><p>Uma pausa guiada para ajudar vocÃª a desacelerar.</p></div></article>
+      <article><i>ðŸ”’</i><div><h4>Privacidade Local-First</h4><p>Seus registros ficam armazenados localmente.</p></div></article>
+    </div>
+  </section>
+  <section class="card"><div class="card-head"><div><small>ANTES DA CONFERÃŠNCIA</small><h3>Checklist de assepsia</h3></div><b id="progress">0/4</b></div>
+    <div id="checklist" class="checks">
+      <label><input type="checkbox"><span>âœ“</span><div><b>Higienizei as mÃ£os</b><small>Comece com as mÃ£os limpas.</small></div></label>
+      <label><input type="checkbox"><span>âœ“</span><div><b>Preparei o material</b><small>Deixe tudo necessÃ¡rio ao seu alcance.</small></div></label>
+      <label><input type="checkbox"><span>âœ“</span><div><b>Conferi o medicamento</b><small>Confira nome, validade e prescriÃ§Ã£o.</small></div></label>
+      <label><input type="checkbox"><span>âœ“</span><div><b>Preparei o local</b><small>Ambiente limpo e adequado.</small></div></label>
+    </div><p id="checkFeedback" class="feedback">Vamos com calma. Marque cada etapa quando estiver pronta.</p>
+  </section>
+  <section class="card"><div class="card-head"><div><small>CONFERÃŠNCIA DA DOSE</small><h3>Informe os dados</h3></div></div>
+    <div class="fields">
+      <label>Dose prescrita <em>(mcg)</em><input id="dose" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex: 250"></label>
+      <label>ConcentraÃ§Ã£o <em>(mg/mL)</em><input id="conc" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex: 1"></label>
+      <label>Volume do frasco <em>(mL)</em><input id="vial" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Ex: 10"></label>
+      <label>Medicamento <em>(opcional)</em><input id="medicine" type="text" placeholder="Ex: Medicamento"></label>
+    </div>
+    <div class="result"><span>Volume calculado</span><strong id="volume">â€”</strong><small id="math">Preencha dose e concentraÃ§Ã£o para visualizar.</small></div>
+  </section>
+  <section class="card"><div class="card-head"><div><small>VISUALIZAÃ‡ÃƒO</small><h3>RÃ©gua de volume</h3></div><strong id="rulerValue">0,00 mL</strong></div>
+    <div class="ruler-wrap"><svg viewBox="0 0 600 180" aria-label="RÃ©gua visual de 0 a 5 mL"><rect x="55" y="55" width="490" height="52" rx="15" class="s-body"/><rect id="fill" x="55" y="55" width="0" height="52" rx="15" class="s-fill"/><rect id="plunger" x="55" y="42" width="12" height="78" rx="6" class="s-plunger"/><rect x="535" y="40" width="18" height="82" rx="5" class="s-lock"/><g class="ticks"><line x1="55" y1="107" x2="55" y2="130"/><line x1="153" y1="107" x2="153" y2="125"/><line x1="251" y1="107" x2="251" y2="130"/><line x1="349" y1="107" x2="349" y2="125"/><line x1="447" y1="107" x2="447" y2="130"/><line x1="545" y1="107" x2="545" y2="130"/></g><g class="labels"><text x="55" y="151">0</text><text x="153" y="151">1</text><text x="251" y="151">2</text><text x="349" y="151">3</text><text x="447" y="151">4</text><text x="545" y="151">5 mL</text></g></svg></div>
+    <p id="rulerWarning" class="warning" hidden>O volume informado ultrapassa 5,0 mL. A rÃ©gua mostra no mÃ¡ximo 5,0 mL.</p>
+  </section>
+  <div class="actions"><button id="breathe" class="secondary">ðŸ« Iniciar RespiraÃ§Ã£o 4-7-8</button><button id="audio" class="secondary">ðŸ”Š Ãudio de Apoio</button><button id="save" class="primary">âœ“ Confirmar e Salvar AplicaÃ§Ã£o</button></div>
+</section>
+<section id="records" class="tab" hidden><div class="page-title"><small>SEU HISTÃ“RICO</small><h2>Meus Registros</h2><p>Tudo fica guardado localmente neste dispositivo.</p></div><div id="recordsList"></div><div id="empty" class="empty"><div>ðŸ“‹</div><h3>Ainda nÃ£o hÃ¡ registros</h3><p>Quando vocÃª confirmar uma aplicaÃ§Ã£o, ela aparecerÃ¡ aqui.</p><button id="first" class="primary">ðŸ’‰ Fazer minha primeira conferÃªncia</button></div><div class="actions"><button id="pdf" class="pro">â­ PRO Â· Exportar RelatÃ³rio em PDF para o MÃ©dico</button><button id="clear" class="danger">ðŸ—‘ Limpar HistÃ³rico</button></div></section>
+<section id="pro" class="tab" hidden>
+  <div class="pro-hero"><div>â­</div><small>SERINGA PRO</small><h2>Mais organizaÃ§Ã£o para sua jornada.</h2><p>Recursos adicionais para acompanhar seus registros com praticidade.</p><b id="proBadge" hidden>âœ“ PRO ATIVO</b></div>
+  <div class="plans">
+    <article><small>Mensal</small><strong>â‚¬ 4,99</strong><span>por mÃªs</span><button class="pro">Escolher plano</button></article>
+    <article class="featured"><mark>Mais escolhido</mark><small>Anual</small><strong>â‚¬ 29,90</strong><span>por ano</span><button class="pro">Escolher plano</button></article>
+    <article><small>VitalÃ­cio</small><strong>â‚¬ 24,90</strong><span>pagamento Ãºnico</span><button class="pro">Escolher plano</button></article>
+  </div>
+  <section class="card"><div class="card-head"><div><small>INCLUÃDO NO PRO</small><h3>Recursos adicionais</h3></div></div><ul class="pro-list"><li>ðŸ“„ <div><b>RelatÃ³rio em PDF</b><small>Leve seus registros organizados ao mÃ©dico.</small></div></li><li>ðŸ§­ <div><b>Mapa de rodÃ­zio de locais</b><small>Acompanhe os locais utilizados.</small></div></li><li>ðŸ“… <div><b>Controle de validade do frasco</b><small>Acompanhe o perÃ­odo de 28 dias.</small></div></li></ul></section>
+  <section class="card activation"><small>JÃ POSSUI UMA CHAVE?</small><h3>Ativar Seringa Pro</h3><p>A ativaÃ§Ã£o Ã© validada localmente neste dispositivo.</p><div><input id="proKey" type="text" placeholder="Inserir chave de ativaÃ§Ã£o" autocomplete="off"><button id="activate" class="primary">Desbloquear</button></div><p id="activationMessage"></p></section>
+</section>
+</main>
+<nav class="bottom-nav"><button data-tab="check" class="active">ðŸ’‰<span>Fazer ConferÃªncia</span></button><button data-tab="records">ðŸ“‹<span>Meus Registros</span></button><button data-tab="pro">â­<span>Seringa Pro</span></button></nav>
+<div id="toast" class="toast" hidden></div>
+<dialog id="breathingModal"><div class="modal"><button data-close="breathingModal" class="close">Ã—</button><small>PAUSA DE RESPIRAÃ‡ÃƒO</small><h2>Respire comigo</h2><div id="breathCircle"><span id="breathPhase">Prepare-se</span><b id="breathTimer">4</b></div><p id="breathText">Inspire pelo nariz e permita que seus ombros relaxem.</p><button id="stopBreath" class="secondary">Encerrar exercÃ­cio</button></div></dialog>
+<dialog id="iosModal"><div class="modal"><button data-close="iosModal" class="close">Ã—</button><div class="modal-icon">ðŸ“²</div><h2>Instalar o SERINGA</h2><p>No Safari do iPhone ou iPad:</p><ol><li>Toque em <b>Compartilhar</b>.</li><li>Escolha <b>Adicionar Ã  Tela de InÃ­cio</b>.</li><li>Confirme em <b>Adicionar</b>.</li></ol><button data-close="iosModal" class="primary">Entendi</button></div></dialog>
+<dialog id="confirmModal"><div class="modal"><div class="modal-icon">ðŸ§¹</div><h2>Limpar histÃ³rico?</h2><p>Todos os registros locais serÃ£o removidos deste dispositivo. Esta aÃ§Ã£o nÃ£o pode ser desfeita.</p><div class="modal-actions"><button data-close="confirmModal" class="secondary">Cancelar</button><button id="confirmClear" class="danger">Limpar</button></div></div></dialog>
+<script src="app.js?v=3.0" defer></script>
+</div>
+</body>
+</html>
+
+
