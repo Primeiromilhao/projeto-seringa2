@@ -93,3 +93,12 @@ button,input{max-width:100%;}
   .plans{grid-template-columns:1fr;}
 }
 :root{color-scheme:light only !important;} html,body{background:#F0F7F6 !important;color:#111827 !important;forced-color-adjust:none;} input[type=number],input[type=text],select{background-color:#FFFFFF !important;background:#FFFFFF !important;color:#111827 !important;border:1.5px solid #CBD5E1 !important;-webkit-appearance:none;appearance:none;box-shadow:none !important;font-size:16px !important;color-scheme:light !important;} input::placeholder{color:#64748B !important;opacity:1 !important;} input:focus,select:focus{background:#FFFFFF !important;color:#111827 !important;outline:2px solid rgba(27,107,99,.18);border-color:#1B6B63 !important;} .result{display:none;} .ruler-wrap{display:none;} #check.has-result .result{display:flex;} #check.has-result .ruler-wrap{display:block;} @media(max-width:430px){main{padding:0 12px;}.topbar{padding:10px 12px 8px;}.brand h1{font-size:20px;}.brand p{font-size:11px;}.privacy{font-size:10px;}.hero-copy h2{font-size:24px;line-height:1.14;}.phone{max-width:250px;margin:0 auto;}.feature-strip{grid-template-columns:1fr 1fr;gap:8px;}.feature-strip article{padding:11px 9px;min-height:88px;}.card{border-radius:18px;padding:14px;margin:11px 0;}.fields{grid-template-columns:1fr;gap:10px;}.fields label{font-size:14px;}.fields input,.activation input{height:50px;padding:0 13px;}.actions{gap:8px;}.actions button{width:100%;min-height:50px;}.bottom-nav{height:68px;}.bottom-nav button{font-size:16px;}.bottom-nav button span{font-size:10px;max-width:30vw;}.app{padding-bottom:82px;}}
+
+/* v4 hard light-mode guarantee */
+:root{color-scheme:light only !important}
+html,body{background:#F0F7F6 !important;color:#111827 !important;}
+input[type=number],input[type=text],select{background-color:#FFFFFF !important;background:#FFFFFF !important;color:#111827 !important;border:1.5px solid #CBD5E1 !important;-webkit-appearance:none !important;appearance:none !important;box-shadow:none !important;font-size:16px !important;color-scheme:light !important;}
+input::placeholder{color:#64748B !important;opacity:1 !important;}
+.result,.ruler-wrap{display:none !important}
+#check.has-result .result,#check.has-result .ruler-wrap{display:block !important}
+

@@ -111,7 +111,7 @@
     const w = window.open('', '_blank'); if (!w) { showToast('Permita a abertura de janelas para gerar o relatÃ³rio.'); return; }
     w.document.write(`<!doctype html><html lang="pt"><head><meta charset="utf-8"><title>RelatÃ³rio SERINGA</title><style>body{font-family:Arial,sans-serif;padding:35px;color:#173B38}h1{color:#1B6B63}table{border-collapse:collapse;width:100%;margin-top:25px}th,td{border:1px solid #ccd8d4;padding:9px;text-align:left}th{background:#D8EEDF}</style></head><body><h1>SERINGA â€” RelatÃ³rio de Registros</h1><p>Gerado em ${new Date().toLocaleString('pt-PT')}</p><table><thead><tr><th>Data</th><th>Hora</th><th>Medicamento</th><th>Dose</th><th>Volume</th></tr></thead><tbody>${rows || '<tr><td colspan="5">Sem registros.</td></tr>'}</tbody></table><script>window.onload=()=>window.print()<\/script></body></html>`); w.document.close();
   }
-  function updateProUI() { const active = storage.flag(KEYS.pro); $('proBadge').hidden = !active; }
+  function saveAgenda(){const v=nextDate.value;if(!v){showToast('Escolha a data e hora da próxima aplicação.');return;}try{localStorage.setItem('seringa_next_date',v);showToast('Agenda guardada neste dispositivo.',true);}catch(_){} } function updateVialExpiry(){const v=vialOpened.value;if(!v){vialExpiry.textContent='Informe a abertura do frasco para calcular a janela de 28 dias.';return;}const d=new Date(v+'T00:00:00');d.setDate(d.getDate()+28);vialExpiry.textContent='Janela de 28 dias: até '+d.toLocaleDateString('pt-PT')+'. Confirme sempre as instruções do medicamento.';} function updateProUI() { const active = storage.flag(KEYS.pro); $('proBadge').hidden = !active; }
   function activatePro() {
     const key = $('proKey').value.trim().toUpperCase(); const msg = $('activationMessage');
     // ValidaÃ§Ã£o offline local: chave de produÃ§Ã£o pode ser trocada por integraÃ§Ã£o futura.
@@ -169,8 +169,10 @@
   function init() {
     const h = new Date().getHours(); $('greeting').textContent = h < 12 ? 'Bom dia!' : h < 18 ? 'Boa tarde!' : 'Boa noite!';
     renderRecords(); updateToday(); updateProUI(); setupChecklist(); setupHero(); setupEvents(); setupInstall(); setupInstallVisibility(); recalculate();
-    try { if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {}); } catch (_) {}
+    try { if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=4.0').catch(() => {}); } catch (_) {}
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+
+
 
