@@ -70,7 +70,21 @@
     <li>🧭 <div><b>Rodízio de locais</b><small>Registe os locais usados e acompanhe a rotação.</small></div></li>
     <li>📦 <div><b>Controlo do frasco</b><small>Registe a abertura e acompanhe a janela indicada na embalagem.</small></div></li>
   </ul></section>
-  <section class="card activation"><small>JÁ POSSUI UMA CHAVE?</small><h3>Ativar Seringa Premium</h3><p>A ativação é validada localmente neste dispositivo.</p><div><input id="proKey" type="text" placeholder="Inserir chave de ativação" autocomplete="off"><button id="activate" class="primary">Desbloquear</button></div><p id="activationMessage"></p></section>
+  <section class="card activation" id="premiumActivation">
+    <small>J&Aacute; POSSUI UMA CHAVE?</small><h3>Ativar Seringa Premium</h3>
+    <p>A ativa&ccedil;&atilde;o &eacute; validada localmente neste dispositivo.</p>
+    <div><input id="proKey" type="text" placeholder="Inserir chave de ativa&ccedil;&atilde;o" autocomplete="off"><button id="activate" class="primary">Desbloquear</button></div>
+    <p id="activationMessage"></p>
+  </section>
+  <section class="card premium-dashboard" id="premiumDashboard" hidden>
+    <div class="premium-status"><span class="premium-check">✓</span><div><small>CONTA PREMIUM</small><h3>Premium ativo neste dispositivo</h3><p>O acesso Premium est&aacute; guardado localmente e continua dispon&iacte;vel ao attualizar a p&aacute;gina.</p></div></div>
+    <div class="premium-actions">
+      <button class="secondary" type="button" data-premium-action="records">📋 Meus Registros</button>
+      <button class="secondary" type="button" data-premium-action="agenda">📅 Agenda</button>
+      <button class="secondary" type="button" data-premium-action="pdf">📄 Relat&oacute;rio em PDF</button>
+    </div>
+    <p class="premium-note">Os seus dados permanecem neste dispositivo. Para uma assinatura paga real sincronizada entre aparelhos, ser&aacute; necess&aacute;rio ligar o aplicativo a um servi&ccedil;o de pagamento e uma conta/servidor.</p>
+  </section>
 </section>
 </main>
 <nav class="bottom-nav"><button data-tab="check" class="active">💉<span>Fazer Conferência</span></button><button data-tab="records">📋<span>Meus Registros</span></button><button data-tab="pro">â<span>Seringa Premium</span></button></nav>
