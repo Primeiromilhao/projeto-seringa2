@@ -1,0 +1,8 @@
+SERINGA static site deployment source: frontend/static
+Version: 3.0.0
+Date: 2026-09-12
+
+ready
+
+push pending
+

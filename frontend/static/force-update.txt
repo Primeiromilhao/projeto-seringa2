@@ -1,0 +1,1 @@
+Static release deployed from frontend/static. Refresh the installed PWA after GitHub Pages deployment.

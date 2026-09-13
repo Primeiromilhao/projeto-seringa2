@@ -6,3 +6,6 @@
 <section class="rounded-3xl bg-white p-5 shadow-sm"><span class="text-xs font-black text-green-600">HISTÓRICO RECENTE</span><h2 class="mt-1 text-xl font-black">Últimas 3 aplicações</h2><div id="history" class="mt-4 divide-y"></div></section>
 <a href="index.html" class="mt-5 block rounded-2xl border border-green-200 bg-green-50 p-4 text-center text-sm font-black text-green-800 shadow-sm">Desbloqueie Lembretes e Relatórios com o Premium!</a></main>
 <script>const sample=[['12/09/2026','08:00','Abdómen Esquerdo'],['10/09/2026','08:00','Coxa Direita'],['08/09/2026','08:00','Abdómen Direito']];function render(){const saved=JSON.parse(localStorage.getItem('seringaRecords')||'[]');const rows=(saved.length?saved:sample).slice(0,3);document.getElementById('date').textContent=rows[0][0];document.getElementById('time').textContent=rows[0][1];document.getElementById('site').textContent=rows[0][2];document.getElementById('history').innerHTML=rows.map(r=>`<div class="flex justify-between py-3 text-sm"><span>${r[0]} · ${r[1]}</span><b class="text-green-700">${r[2]}</b></div>`).join('')}function sair(){localStorage.removeItem('seringaStatus');location.href='index.html'}render();</script></body></html>
+<!-- Seringa static release: 2026-09-12 -->
+
+<!-- v3.0.0 -->

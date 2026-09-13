@@ -1,0 +1,4 @@
+SERINGA 3.0.0
+GitHub Pages static release
+2026-09-12
+
