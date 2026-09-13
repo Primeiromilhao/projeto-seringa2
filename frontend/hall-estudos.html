@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Hall de Estudos — Jornada de Alto Padrão</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, 'Times New Roman', serif; }
+    .glass { background: rgba(20, 23, 28, .72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .gold-line { background: linear-gradient(90deg, transparent, rgba(214,180,92,.75), transparent); }
+    .module-card { transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+    .module-card:hover { transform: translateY(-7px); box-shadow: 0 18px 45px rgba(0,0,0,.38), 0 0 28px rgba(214,180,92,.10); border-color: rgba(214,180,92,.52); }
+    .module-card:focus-visible { outline: 2px solid rgba(214,180,92,.9); outline-offset: 4px; }
+    .icon-ring { box-shadow: inset 0 0 0 1px rgba(214,180,92,.22), 0 0 22px rgba(214,180,92,.08); }
+  </style>
+</head>
+<body class="min-h-screen bg-[#080a0d] text-slate-100 antialiased">
+  <main class="relative min-h-screen overflow-hidden flex items-center justify-center px-4 py-10 sm:px-6">
+    <div class="pointer-events-none absolute -top-32 -left-24 h-72 w-72 rounded-full bg-amber-200/5 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 -right-24 h-80 w-80 rounded-full bg-slate-300/5 blur-3xl"></div>
+    <section class="glass relative w-full max-w-5xl rounded-[2rem] border border-white/10 p-6 shadow-2xl sm:p-10 lg:p-12">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="mx-auto mb-5 h-px w-28 gold-line"></div>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-amber-100/70">Sala Principal • Estudos</p>
+        <h1 class="text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">Bem-vindo à Sua Jornada</h1>
+        <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">Escolha por onde deseja começar. Cada módulo foi organizado para conduzir o seu estudo com clareza, profundidade e continuidade.</p>
+        <div class="mx-auto mt-8 h-px w-full gold-line opacity-60"></div>
+      </div>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        <!-- LINK FUTURO: substitua href="#" pelo endereço real da Fundação -->
+        <a href="#" class="module-card group rounded-2xl border border-white/10 bg-white/[.035] p-5 sm:p-6" aria-label="Abrir Fundação">
+          <div class="flex items-center gap-5"><div class="icon-ring flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-100/20 bg-black/20 text-amber-100"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5h16M6 17V7.5A2.5 2.5 0 0 1 8.5 5H19v12H8.5A2.5 2.5 0 0 0 6 19.5A2.5 2.5 0 0 0 8.5 22H19"/><path stroke-linecap="round" d="M9 9h6M9 12h6"/></svg></div><div class="min-w-0 flex-1 text-left"><p class="text-xl text-white sm:text-2xl">Fundação</p><p class="mt-1 text-sm text-slate-400">A Base de Tudo</p></div><span class="text-amber-100/50">›</span></div>
+        </a>
+        <!-- LINK FUTURO: substitua href="#" pelo endereço real do Módulo 1 -->
+        <a href="#" class="module-card group rounded-2xl border border-white/10 bg-white/[.035] p-5 sm:p-6" aria-label="Abrir Módulo 1">
+          <div class="flex items-center gap-5"><div class="icon-ring flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-100/20 bg-black/20 text-amber-100"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path stroke-linecap="round" d="M12 8v8M9.5 12H15"/></svg></div><div class="min-w-0 flex-1 text-left"><p class="text-xl text-white sm:text-2xl">Módulo 1</p><p class="mt-1 text-sm text-slate-400">O Início</p></div><span class="text-amber-100/50">›</span></div>
+        </a>
+        <!-- LINK FUTURO: substitua href="#" pelo endereço real do Módulo 2 -->
+        <a href="#" class="module-card group rounded-2xl border border-white/10 bg-white/[.035] p-5 sm:p-6" aria-label="Abrir Módulo 2">
+          <div class="flex items-center gap-5"><div class="icon-ring flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-100/20 bg-black/20 text-amber-100"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M7 7h10M7 12h10M7 17h6M5 5h.01M5 10h.01M5 15h.01"/></svg></div><div class="min-w-0 flex-1 text-left"><p class="text-xl text-white sm:text-2xl">Módulo 2</p><p class="mt-1 text-sm text-slate-400">Aprofundamento</p></div><span class="text-amber-100/50">›</span></div>
+        </a>
+        <!-- LINK FUTURO: substitua href="#" pelo endereço real do Módulo 3 -->
+        <a href="#" class="module-card group rounded-2xl border border-white/10 bg-white/[.035] p-5 sm:p-6" aria-label="Abrir Módulo 3">
+          <div class="flex items-center gap-5"><div class="icon-ring flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-100/20 bg-black/20 text-amber-100"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="8"/></svg></div><div class="min-w-0 flex-1 text-left"><p class="text-xl text-white sm:text-2xl">Módulo 3</p><p class="mt-1 text-sm text-slate-400">Expansão</p></div><span class="text-amber-100/50">›</span></div>
+        </a>
+      </div>
+      <footer class="mt-8 text-center"><p class="text-xs tracking-wide text-slate-500">Um espaço de estudo pensado para foco, excelência e constância.</p></footer>
+    </section>
+  </main>
+</body>
+</html>
