@@ -12,8 +12,9 @@ html,body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#9
 </head>
 <body>
 <main class="mx-auto max-w-xl px-5 pb-28 pt-5">
-<a href="hall-entrada.html" class="text-sm font-bold text-emerald-400">← Voltar ao Hall</a>
-<header class="my-6">
+<a href="inicio.html" class="text-sm font-bold text-emerald-400">← Voltar ao Espaço Principal</a>
+<div class="site-actions float-right"><button type="button" class="theme-toggle rounded-xl bg-slate-800 px-3 py-1.5 text-xs font-bold text-slate-300" data-theme-toggle></button></div>
+<header class="my-6 clear-both">
 <p class="text-xs font-black tracking-[.18em] text-emerald-400">SERINGA PREMIUM</p>
 <h1 class="mt-2 text-3xl font-black leading-tight">Módulo 2: Fertilidade e Hormonas</h1>
 <p class="mt-2 text-sm muted">Organização, sincronização e registo para protocolos de fertilidade e terapias hormonais.</p>
@@ -106,21 +107,26 @@ const key=k=>'seringa_m2_'+k;
 const read=k=>JSON.parse(localStorage.getItem(key(k))||'[]');
 const write=(k,v)=>localStorage.setItem(key(k),JSON.stringify(v));
 function abrir(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
-function esc(s){return String(s??'').replace(/[&<>\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[m]))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function render(id,items,fn){document.getElementById(id).innerHTML=items.length?items.slice().reverse().map(fn).join(''):'<p class="text-xs muted">Ainda não há registos.</p>'}
 function guardarAlarme(){const med=alarmMed.value.trim();if(!med||!alarmDate.value||!alarmTime.value){alert('Preencha medicamento, data e hora.');return}let a=read('alarmes');a.push({med,date:alarmDate.value,time:alarmTime.value,on:alarmOn.checked});write('alarmes',a);alarmMed.value='';alarmDate.value='';alarmTime.value='';alarmOn.checked=false;renderAlarms()}
-function renderAlarms(){render('alarmLista',read('alarmes'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.med)}</b><div class="mt-1 text-xs muted">${esc(x.date)} às ${esc(x.time)} · ${x.on?'lembrete ativo':'apenas registo'}</div></div>`)}
+function apagarAlarme(idx){let a=read('alarmes');a.splice(a.length - 1 - idx, 1);write('alarmes',a);renderAlarms()}
+function renderAlarms(){render('alarmLista',read('alarmes'),(x,i)=>`<div class="flex items-center justify-between rounded-xl bg-slate-900/40 p-3 text-sm"><div><b>${esc(x.med)}</b><div class="mt-1 text-xs muted">${esc(x.date)} às ${esc(x.time)} · ${x.on?'lembrete ativo':'apenas registo'}</div></div><button onclick="apagarAlarme(${i})" class="text-red-400 text-xs font-bold hover:underline">Excluir</button></div>`)}
 function guardarDose(){const med=doseMed.value.trim();if(!med){alert('Informe o medicamento.');return}let a=read('doses');a.push({med,date:doseDate.value,time:doseTime.value,obs:doseObs.value.trim()});write('doses',a);doseMed.value='';doseDate.value='';doseTime.value='';doseObs.value='';renderDoses()}
-function renderDoses(){render('doseLista',read('doses'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.med)}</b><div class="mt-1 text-xs muted">${esc(x.date||'Sem data')} ${esc(x.time||'')} · ${esc(x.obs||'Sem observação')}</div></div>`)}
+function apagarDose(idx){let a=read('doses');a.splice(a.length - 1 - idx, 1);write('doses',a);renderDoses()}
+function renderDoses(){render('doseLista',read('doses'),(x,i)=>`<div class="flex items-center justify-between rounded-xl bg-slate-900/40 p-3 text-sm"><div><b>${esc(x.med)}</b><div class="mt-1 text-xs muted">${esc(x.date||'Sem data')} ${esc(x.time||'')} · ${esc(x.obs||'Sem observação')}</div></div><button onclick="apagarDose(${i})" class="text-red-400 text-xs font-bold hover:underline">Excluir</button></div>`)}
 function guardarManuseio(){const checks=[...document.querySelectorAll('.check')].map(x=>x.checked);write('manuseio',[{checks,obs:manuseioObs.value.trim()}]);manuseioMsg.textContent='Checklist guardada localmente.'}
 function guardarCiclo(){if(!cycleDay.value.trim()||!cycleDate.value){alert('Informe o dia do protocolo e a data.');return}let a=read('ciclo');a.push({day:cycleDay.value.trim(),date:cycleDate.value,sym:cycleSym.value,obs:cycleObs.value.trim()});write('ciclo',a);cycleDay.value='';cycleDate.value='';cycleObs.value='';renderCiclo()}
-function renderCiclo(){render('cycleLista',read('ciclo'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.day)} · ${esc(x.date)}</b><div class="mt-1 text-xs muted">${esc(x.sym)}${x.obs?' · '+esc(x.obs):''}</div></div>`)}
+function apagarCiclo(idx){let a=read('ciclo');a.splice(a.length - 1 - idx, 1);write('ciclo',a);renderCiclo()}
+function renderCiclo(){render('cycleLista',read('ciclo'),(x,i)=>`<div class="flex items-center justify-between rounded-xl bg-slate-900/40 p-3 text-sm"><div><b>${esc(x.day)} · ${esc(x.date)}</b><div class="mt-1 text-xs muted">${esc(x.sym)}${x.obs?' · '+esc(x.obs):''}</div></div><button onclick="apagarCiclo(${i})" class="text-red-400 text-xs font-bold hover:underline">Excluir</button></div>`)}
 function guardarFrio(){write('refrigeracao',[{rule:fridgeRule.value.trim()}]);fridgeMsg.textContent='Regra guardada localmente.'}
 function guardarDiario(){if(!diarioText.value.trim())return;let a=read('diario');a.push({text:diarioText.value.trim(),date:new Date().toLocaleDateString('pt-PT')});write('diario',a);diarioText.value='';renderDiario()}
-function renderDiario(){render('diarioLista',read('diario'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><div class="text-xs muted">${esc(x.date)}</div><p class="mt-1 whitespace-pre-wrap">${esc(x.text)}</p></div>`)}
+function apagarDiario(idx){let a=read('diario');a.splice(a.length - 1 - idx, 1);write('diario',a);renderDiario()}
+function renderDiario(){render('diarioLista',read('diario'),(x,i)=>`<div class="flex items-center justify-between rounded-xl bg-slate-900/40 p-3 text-sm"><div><div class="text-xs muted">${esc(x.date)}</div><p class="mt-1 whitespace-pre-wrap">${esc(x.text)}</p></div><button onclick="apagarDiario(${i})" class="text-red-400 text-xs font-bold hover:underline">Excluir</button></div>`)}
 function carregar(){renderAlarms();renderDoses();renderCiclo();renderDiario();const m=read('manuseio')[0];if(m){document.querySelectorAll('.check').forEach((x,i)=>x.checked=!!m.checks[i]);manuseioObs.value=m.obs||''}const f=read('refrigeracao')[0];if(f)fridgeRule.value=f.rule||''}
 function gerarRelatorio(){window.print()}
 carregar();
 </script>
+<script src="seringa-calendar.js?v=1"></script><script src="seringa-pos-contacto.js?v=1"></script><script src="theme.js?v=9"></script>
 </body>
 </html>

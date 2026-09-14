@@ -1,4 +1,4 @@
-﻿/* Seringa Universal Calendar + Alarm v1.0 */
+/* Seringa Universal Calendar + Alarm v1.0 */
 (function(){
   const KEY='seringa_alarm_events_v1';
   const sounds=[
@@ -34,6 +34,9 @@
     addStyle();
     const host=document.createElement('section'); host.id='seringaUniversalCalendar'; host.className='su-cal';
     host.innerHTML=`<h2>📅 Calendário e Alarmes</h2><p class="su-muted">Organize datas e horários conforme o seu plano. O alarme é um lembrete, não uma decisão clínica.</p>
+      <p class="su-muted" style="background:rgba(234,179,8,.12);border:1px solid rgba(234,179,8,.3);padding:8px 12px;border-radius:10px;color:#fef08a;margin:8px 0 12px;font-size:11.5px;line-height:1.4">
+        ⚠️ <b>Nota de segurança:</b> Em telemóveis com ecrã bloqueado ou aplicação em segundo plano, os navegadores podem suspender alarmes web. Para doses com horário estrito, programe também o alarme nativo do seu telemóvel.
+      </p>
       <div class="su-grid"><label class="su-muted">Evento<input id="suTitle" placeholder="Ex.: Lembrete"></label>
       <div class="su-row"><label class="su-muted">Data<input id="suDate" type="date"></label><label class="su-muted">Hora<input id="suTime" type="time"></label></div>
       <div class="su-row"><label class="su-muted">Repetição<select id="suRepeat"><option value="none">Uma vez</option><option value="daily">Diário</option><option value="weekly">Semanal</option><option value="monthly">Mensal</option></select></label>

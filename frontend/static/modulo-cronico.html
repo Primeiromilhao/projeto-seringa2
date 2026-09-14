@@ -1,10 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Seringa Premium — Injetáveis Subcutâneos</title><script src="https://cdn.tailwindcss.com"></script><style>html{background:#131B2B}body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#94A3B8}input,select,textarea{font-size:16px!important;background:#fff!important;color:#0f172a!important}.zone{min-height:72px}@media print{body{background:#fff;color:#111}.no-print{display:none!important}.card{background:#fff;color:#111;border:1px solid #ddd}}</style></head>
 <body class="min-h-screen pb-28"><main class="mx-auto max-w-md px-5 py-6">
-<a href="hall-entrada.html" class="text-sm font-bold text-emerald-400">← Voltar ao Hall</a><header class="my-6"><p class="text-xs font-black tracking-[.18em] text-emerald-400">SERINGA PREMIUM</p><h1 class="mt-2 text-3xl font-black">Injetáveis Subcutâneos</h1><p class="mt-2 text-sm muted">Informação, organização e registo para uso subcutâneo.</p></header>
+<a href="inicio.html" class="text-sm font-bold text-emerald-400">← Voltar ao Espaço Principal</a>
+<div class="site-actions float-right"><button type="button" class="theme-toggle rounded-xl bg-slate-800 px-3 py-1.5 text-xs font-bold text-slate-300" data-theme-toggle></button></div>
+<header class="my-6 clear-both"><p class="text-xs font-black tracking-[.18em] text-emerald-400">SERINGA PREMIUM</p><h1 class="mt-2 text-3xl font-black">Injetáveis Subcutâneos</h1><p class="mt-2 text-sm muted">Informação, organização e registo para uso subcutâneo.</p></header>
 <section class="card rounded-3xl p-5 shadow-xl"><div class="flex gap-3"><span class="text-3xl">📚</span><div><h2 class="text-lg font-black">Conhecimento Fundamental</h2><p class="text-sm text-slate-300">GLP-1, insulina, anticoagulantes e outros</p></div></div><p class="mt-4 text-sm leading-6 text-slate-300">Um espaço para organizar informações, acompanhar o tratamento e levar um histórico claro para a conversa com o profissional.</p><button onclick="abrir('mapa')" class="mx-auto mt-5 rounded-xl bg-[#0F172A] px-6 py-3 text-sm font-black">📖 COMEÇAR O MÓDULO</button></section>
 <section class="mt-6"><h2 class="text-lg font-black">Ferramentas</h2><p class="mb-3 text-xs muted">Cada cartão abre uma área do Módulo 1.</p><div class="grid grid-cols-2 gap-4"><button onclick="abrir('mapa')" class="card rounded-3xl p-4 text-left"><div class="text-3xl">🧍</div><b class="mt-3 block text-sm">Mapa de Zonas</b><span class="mt-1 block text-xs muted">Registe zonas utilizadas e rotação.</span></button><button onclick="abrir('doses')" class="card rounded-3xl p-4 text-left"><div class="text-3xl">📅</div><b class="mt-3 block text-sm">Doses e Estoque</b><span class="mt-1 block text-xs muted">Plano prescrito, datas, canetas e lembretes.</span></button><button onclick="abrir('seguranca')" class="card rounded-3xl p-4 text-left"><div class="text-3xl">🛡️</div><b class="mt-3 block text-sm">Aplicação Segura</b><span class="mt-1 block text-xs muted">Cuidados gerais e fontes oficiais.</span></button><button onclick="abrir('reacoes')" class="card rounded-3xl p-4 text-left"><div class="text-3xl">📊</div><b class="mt-3 block text-sm">Reações e Insights</b><span class="mt-1 block text-xs muted">Sintomas, histórico e padrões.</span></button></div></section>
-<section id="mapa" class="card mt-6 rounded-3xl p-5"><h2 class="text-xl font-black">🧍 Mapa de Zonas</h2><p class="mt-1 text-xs muted">O mapa serve para registo. Não determina o local de aplicação.</p><div id="zonas" class="mt-4 grid grid-cols-2 gap-3"></div><button onclick="registarZona()" class="mt-4 w-full rounded-xl bg-[#10B981] py-3 font-black">REGISTAR ZONA</button><p id="zonaMsg" class="mt-3 text-xs text-emerald-300"></p></section>
+<section id="mapa" class="card mt-6 rounded-3xl p-5"><h2 class="text-xl font-black">🧍 Mapa de Zonas</h2><p class="mt-1 text-xs muted">O mapa serve para registo. Não determina o local de aplicação.</p><div id="zonas" class="mt-4 grid grid-cols-2 gap-3"></div><button onclick="registarZona()" class="mt-4 w-full rounded-xl bg-[#10B981] py-3 font-black">REGISTAR ZONA</button><button type="button" onclick="reiniciarZonas()" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-800/80 py-2.5 text-xs font-bold text-slate-300">🔄 Reiniciar Ciclo de Rotação</button><p id="zonaMsg" class="mt-3 text-xs text-emerald-300"></p></section>
 <section id="doses" class="card mt-5 rounded-3xl p-5"><h2 class="text-xl font-black">📅 Gestão de Doses e Estoque</h2><p class="mt-1 text-xs muted">Registe o que já foi prescrito/indicado. O Seringa não altera doses.</p><div class="mt-4 grid gap-3"><label class="text-xs font-bold">Medicamento / apresentação<input id="med" class="mt-1 w-full rounded-xl p-3" placeholder="Ex.: caneta / medicamento"></label><label class="text-xs font-bold">Data da próxima aplicação<input id="data" type="date" class="mt-1 w-full rounded-xl p-3"></label><label class="text-xs font-bold">Quantidade em estoque<input id="estoque" type="number" min="0" class="mt-1 w-full rounded-xl p-3" placeholder="0"></label><button onclick="guardarDose()" class="rounded-xl bg-[#10B981] py-3 font-black">GUARDAR REGISTO</button></div><div id="doseLista" class="mt-4 space-y-2"></div></section>
 <section id="seguranca" class="card mt-5 rounded-3xl p-5"><h2 class="text-xl font-black">🛡️ Aplicação Segura</h2><div class="mt-4 space-y-3 text-sm leading-6 text-slate-300"><p>• Confirme sempre o medicamento e as instruções oficiais que acompanham o produto.</p><p>• O local e a técnica devem seguir a orientação recebida do profissional e do fabricante.</p><p>• Não utilize esta aplicação para decidir dose, trocar medicamento ou substituir avaliação clínica.</p><p>• Em caso de reação importante ou dúvida sobre segurança, procure orientação profissional.</p></div></section>
 <section id="reacoes" class="card mt-5 rounded-3xl p-5"><h2 class="text-xl font-black">📊 Registro de Reações e Insights</h2><p class="mt-1 text-xs muted">Registo pessoal para acompanhamento e conversa profissional.</p><div class="mt-4 grid gap-3"><label class="text-xs font-bold">Como se sente?<select id="sintoma" class="mt-1 w-full rounded-xl p-3"><option>Sem reação relevante</option><option>Náusea</option><option>Dor local</option><option>Vermelhidão</option><option>Hematoma</option><option>Outra</option></select></label><label class="text-xs font-bold">Observação<textarea id="obs" rows="3" class="mt-1 w-full rounded-xl p-3" placeholder="Descreva o que observou"></textarea></label><button onclick="guardarReacao()" class="rounded-xl bg-[#10B981] py-3 font-black">GUARDAR REAÇÃO</button></div><div id="reacaoLista" class="mt-4 space-y-2"></div></section>
@@ -13,13 +15,72 @@
 </main><footer class="no-print fixed inset-x-0 bottom-0 bg-[#131B2B]/95 p-4 backdrop-blur"><button onclick="gerarRelatorio()" class="mx-auto flex w-full max-w-md justify-center rounded-xl bg-[#0F172A] py-4 font-black text-emerald-400">📄 Gerar Relatório PDF</button></footer>
 <script>
 const zonas=['Abdómen — zona 1','Abdómen — zona 2','Abdómen — zona 3','Abdómen — zona 4','Abdómen — zona 5','Abdómen — zona 6','Coxa — esquerda','Coxa — direita'];let selecionada='';
-const $=id=>document.getElementById(id);function abrir(id){$(id).scrollIntoView({behavior:'smooth',block:'start'})}
-function renderZonas(){const usados=JSON.parse(localStorage.getItem('seringa_zonas')||'[]');$('zonas').innerHTML=zonas.map(z=>`<button class="zone rounded-2xl p-3 text-left text-xs font-bold ${usados.includes(z)?'bg-emerald-900 text-emerald-100':'bg-[#0F172A] text-slate-300'}" onclick="selecionada='${z}';$('zonaMsg').textContent='Selecionada: ${z}'">${usados.includes(z)?'✓ ':''}${z}</button>`).join('')}
-function registarZona(){if(!selecionada)return $('zonaMsg').textContent='Primeiro selecione uma zona.';const a=JSON.parse(localStorage.getItem('seringa_zonas')||'[]');if(!a.includes(selecionada))a.push(selecionada);localStorage.setItem('seringa_zonas',JSON.stringify(a));$('zonaMsg').textContent='Zona registada: '+selecionada;renderZonas()}
-function guardarDose(){const r={med:$('med').value||'Não informado',data:$('data').value||'Não definida',estoque:$('estoque').value||'0'};const a=JSON.parse(localStorage.getItem('seringa_doses')||'[]');a.unshift(r);localStorage.setItem('seringa_doses',JSON.stringify(a));$('med').value='';$('data').value='';$('estoque').value='';renderDoses()}
-function renderDoses(){const a=JSON.parse(localStorage.getItem('seringa_doses')||'[]');$('doseLista').innerHTML=a.length?a.slice(0,8).map(r=>`<div class="rounded-2xl bg-[#0F172A] p-3 text-xs"><b>${r.med}</b><div class="muted mt-1">Próxima: ${r.data} · Estoque: ${r.estoque}</div></div>`).join(''):'<p class="text-xs muted">Ainda não há registos.</p>'}
-function guardarReacao(){const r={data:new Date().toLocaleString('pt-PT'),sintoma:$('sintoma').value,obs:$('obs').value};const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');a.unshift(r);localStorage.setItem('seringa_reacoes',JSON.stringify(a));$('obs').value='';renderReacoes()}
-function renderReacoes(){const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');$('reacaoLista').innerHTML=a.length?a.slice(0,8).map(r=>`<div class="rounded-2xl bg-[#0F172A] p-3 text-xs"><b>${r.sintoma}</b><div class="muted mt-1">${r.data}</div><div class="mt-1 text-slate-300">${r.obs||'Sem observação.'}</div></div>`).join(''):'<p class="text-xs muted">Ainda não há registos.</p>'}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function abrir(id){$(id).scrollIntoView({behavior:'smooth',block:'start'})}
+function renderZonas(){
+  const usados=JSON.parse(localStorage.getItem('seringa_zonas')||'[]');
+  $('zonas').innerHTML=zonas.map(z=>{
+    const used = usados.find(u => (typeof u === 'string' ? u === z : u.zone === z));
+    const isUsed = !!used;
+    const dateStr = used && used.date ? ` (${used.date})` : '';
+    return `<button class="zone rounded-2xl p-3 text-left text-xs font-bold ${isUsed?'bg-emerald-900 text-emerald-100 ring-2 ring-emerald-500':'bg-[#0F172A] text-slate-300'}" onclick="selecionada='${z}';$('zonaMsg').textContent='Selecionada: ${z}'">${isUsed?'✓ ':''}${z}${dateStr}</button>`;
+  }).join('');
+}
+function registarZona(){
+  if(!selecionada)return $('zonaMsg').textContent='Primeiro selecione uma zona.';
+  let a=JSON.parse(localStorage.getItem('seringa_zonas')||'[]');
+  // Normalize existing string elements to objects
+  a = a.filter(u => (typeof u === 'string' ? u !== selecionada : u.zone !== selecionada));
+  a.push({zone: selecionada, date: new Date().toLocaleDateString('pt-PT')});
+  localStorage.setItem('seringa_zonas',JSON.stringify(a));
+  $('zonaMsg').textContent='Zona registada: '+selecionada;
+  renderZonas();
+}
+function reiniciarZonas(){
+  if(confirm('Deseja reiniciar a marcação das zonas de rotação?')){
+    localStorage.removeItem('seringa_zonas');
+    $('zonaMsg').textContent='Ciclo de rotação reiniciado com sucesso.';
+    selecionada='';
+    renderZonas();
+  }
+}
+function guardarDose(){
+  const r={id:Date.now(),med:$('med').value||'Não informado',data:$('data').value||'Não definida',estoque:$('estoque').value||'0'};
+  const a=JSON.parse(localStorage.getItem('seringa_doses')||'[]');
+  a.unshift(r);
+  localStorage.setItem('seringa_doses',JSON.stringify(a));
+  $('med').value='';$('data').value='';$('estoque').value='';
+  renderDoses();
+}
+function apagarDose(idx){
+  const a=JSON.parse(localStorage.getItem('seringa_doses')||'[]');
+  a.splice(idx,1);
+  localStorage.setItem('seringa_doses',JSON.stringify(a));
+  renderDoses();
+}
+function renderDoses(){
+  const a=JSON.parse(localStorage.getItem('seringa_doses')||'[]');
+  $('doseLista').innerHTML=a.length?a.slice(0,10).map((r,i)=>`<div class="flex items-center justify-between rounded-2xl bg-[#0F172A] p-3 text-xs"><div><b>${esc(r.med)}</b><div class="muted mt-1">Próxima: ${esc(r.data)} · Estoque: ${esc(r.estoque)}</div></div><button onclick="apagarDose(${i})" class="text-red-400 font-bold p-1 hover:underline">Excluir</button></div>`).join(''):'<p class="text-xs muted">Ainda não há registos.</p>';
+}
+function guardarReacao(){
+  const r={id:Date.now(),data:new Date().toLocaleString('pt-PT'),sintoma:$('sintoma').value,obs:$('obs').value};
+  const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');
+  a.unshift(r);
+  localStorage.setItem('seringa_reacoes',JSON.stringify(a));
+  $('obs').value='';
+  renderReacoes();
+}
+function apagarReacao(idx){
+  const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');
+  a.splice(idx,1);
+  localStorage.setItem('seringa_reacoes',JSON.stringify(a));
+  renderReacoes();
+}
+function renderReacoes(){
+  const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');
+  $('reacaoLista').innerHTML=a.length?a.slice(0,10).map((r,i)=>`<div class="flex items-center justify-between rounded-2xl bg-[#0F172A] p-3 text-xs"><div><b>${esc(r.sintoma)}</b><div class="muted mt-1">${esc(r.data)}</div><div class="mt-1 text-slate-300">${esc(r.obs||'Sem observação.')}</div></div><button onclick="apagarReacao(${i})" class="text-red-400 font-bold p-1 hover:underline">Excluir</button></div>`).join(''):'<p class="text-xs muted">Ainda não há registos.</p>';
+}
 function gerarRelatorio(){window.print()}
 renderZonas();renderDoses();renderReacoes();
-</script></body></html>
+</script><script src="seringa-calendar.js?v=1"></script><script src="seringa-pos-contacto.js?v=1"></script><script src="theme.js?v=9"></script></body></html>
