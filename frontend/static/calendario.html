@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Seringa - Calendário e Lembretes</title>
@@ -8,7 +9,8 @@
 <style>
 .toggle-checkbox:checked{right:0;border-color:#10B981}.toggle-checkbox:checked+.toggle-label{background:#10B981}
 </style>
-<link rel="stylesheet" href="theme.css?v=9"></head>
+<link rel="stylesheet" href="theme.css?v=9"><script src="seringa-shield.js?v=1"></script>
+</head>
 <body class="bg-[#111827] text-white font-sans min-h-screen p-4 flex flex-col items-center">
 <div class="w-full max-w-md">
 <header class="flex items-center gap-3 mb-6 pt-2 pb-4 border-b border-slate-800">

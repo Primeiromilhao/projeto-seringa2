@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';">
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Seringa - Insights Premium</title><script src="https://cdn.tailwindcss.com"></script>
 <style>.tab-ativa{border-bottom:2px solid #10B981;color:#10B981}.tab-inativa{color:#64748B;border-bottom:2px solid transparent}.escondido{display:none}input{font-size:16px!important}@media print{body{background:#fff!important;color:#111!important}.no-print{display:none!important}}</style>
-<link rel="stylesheet" href="theme.css?v=9"></head>
+<link rel="stylesheet" href="theme.css?v=9"><script src="seringa-shield.js?v=1"></script>
+</head>
 <body class="bg-[#111827] text-white font-sans min-h-screen p-4 flex flex-col items-center"><main class="w-full max-w-md">
 <header class="flex items-center gap-3 mb-4 pt-2 pb-2"><button onclick="window.history.back()" class="text-slate-400 text-2xl font-bold p-2 -ml-2">←</button><h1 class="text-xl font-bold text-slate-100">💎 Insights Premium</h1></header>
 <div class="flex w-full mb-6 border-b border-slate-800"><button id="btnTermico" onclick="mudarTab('termico')" class="flex-1 pb-3 text-sm font-bold uppercase tracking-wider tab-ativa">Mapa Térmico</button><button id="btnDossie" onclick="mudarTab('dossie')" class="flex-1 pb-3 text-sm font-bold uppercase tracking-wider tab-inativa">Diário Visual</button></div>
