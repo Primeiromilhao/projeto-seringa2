@@ -1,4 +1,4 @@
-/* Seringa Universal Calendar + Alarm v1.0 */
+﻿/* Seringa Universal Calendar + Alarm v1.0 */
 (function(){
   const KEY='seringa_alarm_events_v1';
   const sounds=[
@@ -73,9 +73,10 @@
   function fire(e){
     if(activeEvent)return; activeEvent=e; $('suAlarmTitle').textContent=e.title; $('suAlarmInfo').textContent=`Agendado para ${e.date} às ${e.time}`; $('suAlarm').classList.add('on'); play(e.sound,false);
     if('Notification' in window&&Notification.permission==='granted')new Notification('Seringa — Alarme',{body:e.title,tag:e.id});
-    if(e.repeat==='none'){write(read().filter(x=>x.id!==e.id));render();}else{const a=read();const i=a.findIndex(x=>x.id===e.id);if(i>=0){const d=new Date(e.date+'T'+e.time+':00');if(e.repeat==='daily')d.setDate(d.getDate()+1);if(e.repeat==='weekly')d.setDate(d.getDate()+7);if(e.repeat==='monthly')d.setMonth(d.getMonth()+1);a[i].date=d.toISOString().slice(0,10);write(a);render();}}
+    if(e.repeat==='none'){write(read().filter(x=>x.id!==e.id));render();}else{const a=read();const i=a.findIndex(x=>x.id===e.id);if(i>=0){const d=new Date(e.date+'T'+e.time+':00');if(e.repeat==='daily')d.setDate(d.getDate()+1);if(e.repeat==='weekly')d.setDate(d.getDate()+7);if(e.repeat==='monthly')d.setMonth(d.getMonth()+1);a[i].date=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());write(a);render();}}
   }
-  function dueKey(d){return d.toISOString().slice(0,16);}
+  function pad(n){return String(n).padStart(2,"0");}
+  function dueKey(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());}
   function tick(){
     const now=new Date(), key=dueKey(now); if(key===lastMinute)return; lastMinute=key;
     read().forEach(e=>{if(!e.enabled)return; if(`${e.date}T${e.time}`===key)fire(e);});

@@ -1,4 +1,4 @@
-const CACHE='seringa-v6';
+const CACHE='seringa-v7';
 const BASE='./';
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll([BASE,'./index.html','./styles.css?v=4.0','./app.js?v=4.0','./manifest.webmanifest','./seringa-calendar.js?v=1','./seringa-pos-contacto.js?v=1'])).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
