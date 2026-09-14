@@ -42,4 +42,4 @@ function saveSos(){if(!sosText.value.trim())return;let a=read('sos');a.push({dat
 function render(){list('insLista',read('ins'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.tipo)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.dose||'dose não registada')} · ${esc(x.obs||'')}</div></div>`);list('zoneLista',read('zones'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.zone)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.obs||'')}</div></div>`);list('glLista',read('gly'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.value)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.event)} · ${esc(x.obs||'')}</div></div>`);list('sosLista',read('sos'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><div class="text-xs muted">${esc(x.date)}</div>${esc(x.text)}</div>`)}
 function gerarDiario(){window.print()}render();
 </script>
-<script src="theme.js?v=8"></script></body></html>
+<script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script></body></html>

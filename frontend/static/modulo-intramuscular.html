@@ -29,4 +29,4 @@ function saveZone(){if(!sel)return alert('Selecione uma zona.');let a=R('zones')
 function savePain(){if(pain.value==='')return;let a=R('pain');a.push({value:pain.value,obs:painObs.value,date:new Date().toLocaleString('pt-PT')});W('pain',a);pain.value='';painObs.value='';render()}
 function saveCheck(){W('check',[...document.querySelectorAll('.check')].map(x=>x.checked));checkMsg.textContent='Checklist guardada localmente.'}
 function render(){list('imList',R('im'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${e(x.med)}</b><div class="text-xs muted">${e(x.date)} · ${e(x.dose||'dose não registada')} · ${e(x.obs||'')}</div></div>`);list('zoneList',R('zones'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${e(x.zone)}</b><div class="text-xs muted">${e(x.date)}</div></div>`);list('painList',R('pain'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>Dor: ${e(x.value)}/10</b><div class="text-xs muted">${e(x.date)} · ${e(x.obs||'')}</div></div>`)}render();
-</script><script src="theme.js?v=8"></script></body></html>
+</script><script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script></body></html>

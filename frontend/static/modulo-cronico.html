@@ -22,4 +22,4 @@ function guardarReacao(){const r={data:new Date().toLocaleString('pt-PT'),sintom
 function renderReacoes(){const a=JSON.parse(localStorage.getItem('seringa_reacoes')||'[]');$('reacaoLista').innerHTML=a.length?a.slice(0,8).map(r=>`<div class="rounded-2xl bg-[#0F172A] p-3 text-xs"><b>${r.sintoma}</b><div class="muted mt-1">${r.data}</div><div class="mt-1 text-slate-300">${r.obs||'Sem observação.'}</div></div>`).join(''):'<p class="text-xs muted">Ainda não há registos.</p>'}
 function gerarRelatorio(){window.print()}
 renderZonas();renderDoses();renderReacoes();
-</script><script src="theme.js?v=8"></script></body></html>
+</script><script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script></body></html>

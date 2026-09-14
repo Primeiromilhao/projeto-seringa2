@@ -35,4 +35,4 @@ function saveFoto(){if(!foto.files[0])return alert('Escolha uma imagem.');fotoMs
 function saveReacao(){let a=R('reacoes');a.push({r:reacao.value,obs:reacaoObs.value,date:new Date().toLocaleString('pt-PT')});W('reacoes',a);reacaoObs.value='';render()}
 function render(){list('sessaoLista',R('sessoes'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${e(x.p)}</b><div class="text-xs muted">${e(x.d)} · ${e(x.prof||'Sem profissional registado')}</div><div class="text-xs mt-1">${e(x.obs||'')}</div></div>`);list('simLista',R('simetria'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${e(x.area)}</b><div class="text-xs muted">D: ${e(x.dir||'—')} · E: ${e(x.esq||'—')}</div></div>`);list('reacaoLista',R('reacoes'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${e(x.r)}</b><div class="text-xs muted">${e(x.date)} · ${e(x.obs||'')}</div></div>`)}
 render();
-</script><script src="theme.js?v=8"></script></body></html>
+</script><script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script></body></html>

@@ -49,4 +49,4 @@ function render(){const arr=JSON.parse(localStorage.getItem(KEY)||'[]');document
 function esc(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 const h=localStorage.getItem('seringaHoraProxima');if(h)document.getElementById('horaProximaDose').textContent=h;const hist=JSON.parse(localStorage.getItem('seringaHistorico')||'[]');if(hist.length){const d=new Date(hist[0].data+'T00:00:00');d.setDate(d.getDate()+7);document.getElementById('dataProximaDose').textContent=d.toLocaleDateString('pt-PT',{weekday:'short',day:'2-digit',month:'short'});const ordem=['Superior Esquerdo','Superior Direito','Médio Direito','Inferior Direito','Inferior Esquerdo','Médio Esquerdo'];const i=ordem.indexOf(hist[0].local);document.getElementById('zonaProxima').textContent=i>=0?ordem[(i+1)%ordem.length]:'Zona seguinte do rodízio';}render();
 </script>
-<script src="theme.js?v=8"></script></body></html>
+<script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script></body></html>
