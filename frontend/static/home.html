@@ -2,7 +2,7 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827"><title>Seringa — Hall de Entrada</title>
+<meta name="theme-color" content="#111827"><title>Seringa</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>body{background:#111827;color:#f8fafc}.pulse{animation:pulse 1s infinite;box-shadow:0 0 0 0 rgba(16,185,129,.8)}@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(16,185,129,0)}}input{font-size:16px!important;background:#fff!important;color:#111827!important}</style></head>
 <body class="min-h-screen">
@@ -34,4 +34,4 @@ function ativarSom(){alarmAudio.volume=.65;alarmAudio.play().then(()=>{alarmAudi
 function dispararAlarme(){const box=document.getElementById('alarm');box.classList.remove('hidden');box.classList.add('pulse');if(alarmAtivo)alarmAudio.play().catch(()=>{});navigator.vibrate?.([300,150,300]);setTimeout(()=>box.classList.remove('pulse'),6000)}
 function dispensarAlarme(){document.getElementById('alarm').classList.add('hidden')};function verificarAlarmes(){const agora=new Date(),hh=agora.toTimeString().slice(0,5),key=agora.toISOString().slice(0,10)+' '+hh;if(lastAlarm===key)return;let a=[];try{a=JSON.parse(localStorage.getItem('seringaAlarmes')||'[]')}catch{}if(a.some(x=>x.ativo!==false&&x.hora===hh)){lastAlarm=key;dispararAlarme()}}
 function sair(){localStorage.removeItem('seringaStatus');location.href='index.html'}atualizar();setInterval(verificarAlarmes,30000);verificarAlarmes();
-</script></body></html>
+</script><script src="theme.js?v=5"></script></body></html>
