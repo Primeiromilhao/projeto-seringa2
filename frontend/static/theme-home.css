@@ -1,0 +1,12 @@
+/* Camada visual do Hall antigo: respeita o seletor global de tema */
+html[data-theme="light"] body{background:var(--s-bg)!important;color:var(--s-text)!important}
+html[data-theme="light"] .bottom-nav{background:rgba(255,255,255,.97)!important;color:var(--s-muted)!important}
+html[data-theme="dark"] .topbar,html[data-theme="dark"] main{color:var(--s-text)!important}
+html[data-theme="dark"] .card,html[data-theme="dark"] .status,html[data-theme="dark"] .benefits article,html[data-theme="dark"] .records-card,html[data-theme="dark"] .plans article,html[data-theme="dark"] .empty,html[data-theme="dark"] .modal{background:var(--s-surface)!important;color:var(--s-text)!important;border-color:var(--s-line)!important}
+html[data-theme="dark"] .bottom-nav{background:rgba(18,34,38,.97)!important;border-color:var(--s-line)!important}
+html[data-theme="dark"] .bottom-nav button{color:var(--s-muted)!important}
+html[data-theme="dark"] .bottom-nav button.active{color:var(--s-brand)!important}
+html[data-theme="dark"] .hero-copy p,html[data-theme="dark"] .welcome p,html[data-theme="dark"] .page-title p,html[data-theme="dark"] .card p,html[data-theme="dark"] .section-head p,html[data-theme="dark"] .benefits p,html[data-theme="dark"] .records-card small{color:var(--s-muted)!important}
+html[data-theme="dark"] .phone{background:#071012!important}
+html[data-theme="dark"] .phone-screen{background:var(--s-surface2)!important}
+html[data-theme="dark"] .demo-history span{background:var(--s-surface)!important;border-color:var(--s-line)!important}

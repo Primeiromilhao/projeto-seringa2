@@ -1,0 +1,30 @@
+/* SERINGA UNIVERSAL — tema e responsividade */
+:root{--s-bg:#F0F7F6;--s-surface:#FFFFFF;--s-surface2:#F6FAF9;--s-text:#173B38;--s-muted:#607773;--s-line:#D8E5E1;--s-brand:#1B6B63;--s-brand-soft:#D8EEDF;--s-shadow:0 12px 35px rgba(23,59,56,.08)}
+html[data-theme="dark"]{--s-bg:#0B1518;--s-surface:#122226;--s-surface2:#173036;--s-text:#F5FBF9;--s-muted:#A9BFBA;--s-line:#294148;--s-brand:#35C49B;--s-brand-soft:#173C35;--s-shadow:0 18px 45px rgba(0,0,0,.25)}
+html,body{background:var(--s-bg)!important;color:var(--s-text)!important;transition:background .2s ease,color .2s ease}
+.s-theme{position:fixed;right:16px;top:16px;z-index:9999;border:1px solid var(--s-line);background:var(--s-surface);color:var(--s-text);border-radius:999px;padding:9px 13px;font:700 13px system-ui;box-shadow:var(--s-shadow);cursor:pointer}
+.s-theme:hover{border-color:var(--s-brand)}
+.s-theme .dark-label{display:none}.s-theme .light-label{display:inline}
+html[data-theme="dark"] .s-theme .dark-label{display:inline}html[data-theme="dark"] .s-theme .light-label{display:none}
+@media(max-width:600px){.s-theme{top:10px;right:10px;padding:8px 11px;font-size:12px}}
+/* Superfícies comuns */
+.s-theme-surface{background:var(--s-surface)!important;color:var(--s-text)!important;border-color:var(--s-line)!important}
+.s-theme-muted{color:var(--s-muted)!important}
+.s-theme-button{background:var(--s-brand)!important;color:#fff!important;border-color:var(--s-brand)!important}
+/* Melhor leitura e alinhamento */
+.seringa-public{max-width:1160px;margin:auto;padding:0 24px}
+.seringa-public .copy{max-width:720px}
+.seringa-public p{max-width:68ch}
+.seringa-public .grid-balanced{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.seringa-public .grid-balanced>*{min-width:0}
+@media(max-width:900px){.seringa-public .grid-balanced{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.seringa-public{padding:0 16px}.seringa-public .grid-balanced{grid-template-columns:1fr}.seringa-public p{font-size:15px;line-height:1.6}}
+/* Corrige blocos Tailwind antigos quando tema escuro é escolhido */
+html[data-theme="dark"] .theme-adaptive-card{background:var(--s-surface)!important;color:var(--s-text)!important;border-color:var(--s-line)!important}
+html[data-theme="dark"] .theme-adaptive-muted{color:var(--s-muted)!important}
+html[data-theme="dark"] .theme-adaptive-soft{background:var(--s-surface2)!important;color:var(--s-text)!important}
+/* Áreas de formulário mantêm contraste em ambos os temas */
+input,select,textarea{font-size:16px!important}
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] textarea{background:#FFFFFF!important;color:#111827!important;border-color:#94A3B8!important}
+/* Tablets e ecrãs largos: largura confortável sem linhas demasiado longas */
+@media(min-width:769px){body{font-size:16px}.content-wide{max-width:1120px;margin:auto}}
