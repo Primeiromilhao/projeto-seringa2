@@ -9,10 +9,10 @@
 html,body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#94A3B8}input,select,textarea{font-size:16px!important;background:#fff!important;color:#0f172a!important}button{touch-action:manipulation}.tool{min-height:150px}
 @media print{body{background:#fff;color:#111}.no-print{display:none!important}.card{background:#fff;color:#111;border:1px solid #ddd}}
 </style>
-<link rel="stylesheet" href="theme.css?v=6"></head>
+<link rel="stylesheet" href="theme.css?v=7"></head>
 <body>
 <main class="mx-auto max-w-xl px-5 pb-28 pt-5">
-<a href="hall-entrada.html" class="text-sm font-bold text-emerald-400">← Voltar ao Hall</a>
+<a href="inicio.html" class="text-sm font-bold text-emerald-400">← Voltar ao Espaço Principal</a>
 <header class="my-6"><h1 class="mt-2 text-3xl font-black leading-tight">Diabetes e Múltiplas Doses Diárias (MDI)</h1><p class="mt-2 text-sm muted">Organização de aplicações, registos glicémicos e rotação de zonas conforme o plano já indicado pela equipa.</p></header>
 <section class="card rounded-3xl p-5 shadow-lg"><div class="text-3xl">🩸</div><h2 class="mt-3 text-xl font-black">Gestão de Múltiplas Doses Diárias</h2><p class="mt-2 text-sm leading-6 muted">Separe registos de insulina basal e rápida, acompanhe horários e episódios de hipo/hiperglicemia sem alterar a prescrição.</p><button onclick="abrir('registos')" class="mt-4 w-full rounded-2xl bg-[#10B981] py-3 font-black text-white">📖 COMEÇAR O MÓDULO</button></section>
 <section class="mt-7"><h2 class="text-lg font-black">Ferramentas do Módulo</h2><p class="mb-3 text-xs muted">Quatro áreas para organizar informação de alta frequência.</p><div class="grid grid-cols-2 gap-4">
@@ -42,4 +42,4 @@ function saveSos(){if(!sosText.value.trim())return;let a=read('sos');a.push({dat
 function render(){list('insLista',read('ins'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.tipo)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.dose||'dose não registada')} · ${esc(x.obs||'')}</div></div>`);list('zoneLista',read('zones'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.zone)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.obs||'')}</div></div>`);list('glLista',read('gly'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><b>${esc(x.value)}</b><div class="text-xs muted">${esc(x.date)} · ${esc(x.event)} · ${esc(x.obs||'')}</div></div>`);list('sosLista',read('sos'),x=>`<div class="rounded-xl bg-slate-900/40 p-3 text-sm"><div class="text-xs muted">${esc(x.date)}</div>${esc(x.text)}</div>`)}
 function gerarDiario(){window.print()}render();
 </script>
-<script src="theme.js?v=6"></script></body></html>
+<script src="theme.js?v=7"></script></body></html>

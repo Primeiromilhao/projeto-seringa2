@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111827"><title>Seringa — Universal</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#111827;color:#f8fafc}input{font-size:16px!important;background:#fff!important;color:#111827!important}.card{background:#1e293b;border:1px solid #334155}.selected{border-color:#10b981;background:#064e3b}</style><link rel="stylesheet" href="theme.css?v=6"></head>
+<style>body{background:#111827;color:#f8fafc}input{font-size:16px!important;background:#fff!important;color:#111827!important}.card{background:#1e293b;border:1px solid #334155}.selected{border-color:#10b981;background:#064e3b}</style><link rel="stylesheet" href="theme.css?v=7"></head>
 <body class="min-h-screen"><main class="mx-auto max-w-md p-5 pb-10">
 <header class="flex items-center justify-between py-3"><div><p class="text-xs uppercase tracking-[.2em] text-emerald-400">Seringa Universal</p><h1 class="text-2xl font-bold">Escolha o seu ambiente</h1></div><a href="home.html" class="rounded-xl bg-slate-800 px-3 py-2 text-sm">Voltar</a></header>
 <section class="mt-4 rounded-3xl border border-emerald-500/30 bg-slate-800 p-5"><p class="text-lg font-bold">Motor Dinâmico de Ecrãs</p><p class="mt-2 text-sm leading-6 text-slate-400">O Seringa mostra apenas o ambiente adequado ao objetivo do seu registo. Os dados permanecem neste aparelho.</p><div class="mt-3 rounded-2xl bg-emerald-950/50 p-3 text-xs text-emerald-300">🔒 Privacidade local · sem envio automático de fotografias</div></section>
@@ -30,5 +30,5 @@ function contar(exp){clearInterval(timerId);const tick=()=>{const s=Math.max(0,e
 document.getElementById('foto').addEventListener('change',e=>{const f=e.target.files?.[0];if(f)guardarFoto(f).catch(()=>alert('Não foi possível guardar a fotografia localmente.'))});
 async function exportar(){const texto='SERINGA UNIVERSAL\nAmbiente: '+document.getElementById('titulo').textContent+'\nData: '+new Date().toLocaleString('pt-PT')+'\n\nRegisto local para acompanhamento.';const blob=new Blob([texto],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='seringa-registo.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);await apagarFoto();}
 (async()=>{try{await abrirDB();const r=db.transaction('temporarios').objectStore('temporarios').get('foto');r.onsuccess=()=>{if(r.result?.expira>Date.now())contar(r.result.expira);else if(r.result)apagarFoto()}}catch{}abrir(localStorage.getItem('seringa_universal_modulo')||'cronico')})();
-</script><script src="theme.js?v=6"></script></body></html>
+</script><script src="theme.js?v=7"></script></body></html>
 
