@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v10';
+const CACHE = 'seringa-v11';
 const BASE = './';
 const ASSETS = [
   BASE,

@@ -62,7 +62,14 @@
     document.querySelectorAll('[data-test]').forEach(b=>b.onclick=()=>play(b.dataset.test,true));
     document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{write(read().filter(x=>x.id!==b.dataset.del));render();});
   }
-  function ctx(){audio=audio||new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();return audio;}
+  function unlockCtx(){
+    if(!audio) audio = new(window.AudioContext||window.webkitAudioContext)();
+    if(audio.state==='suspended') audio.resume();
+    const o=audio.createOscillator(); o.connect(audio.destination); o.start(0); o.stop(0.001);
+    document.removeEventListener('click', unlockCtx); document.removeEventListener('touchstart', unlockCtx);
+  }
+  document.addEventListener('click', unlockCtx); document.addEventListener('touchstart', unlockCtx);
+  function ctx(){if(!audio)audio=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();return audio;}
   function play(id,preview){
     const c=ctx(), s=sounds.find(x=>x.id===id)||sounds[0], gain=c.createGain(); gain.gain.value=.16; gain.connect(c.destination); let t=c.currentTime;
     s.notes.forEach(([freq,dur])=>{if(freq){const o=c.createOscillator();o.type='sine';o.frequency.value=freq;o.connect(gain);o.start(t);o.stop(t+dur);}t+=dur;});
@@ -82,7 +89,11 @@
   function dueKey(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());}
   function tick(){
     const now=new Date(), key=dueKey(now); if(key===lastMinute)return; lastMinute=key;
-    read().forEach(e=>{if(!e.enabled)return; if(`${e.date}T${e.time}`===key)fire(e);});
+    read().forEach(e=>{
+      if(!e.enabled)return;
+      const targetTime = e.time.length > 5 ? e.time.slice(0,5) : e.time;
+      if(`${e.date}T${targetTime}`===key) fire(e);
+    });
   }
   function start(){inject();setInterval(tick,1000);tick();}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
