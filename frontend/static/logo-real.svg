@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">Seringa</title><desc id="desc">Ilustracao detalhada de uma seringa realista</desc>
+<defs>
+<linearGradient id="barrel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".94"/><stop offset=".45" stop-color="#dfe9e6" stop-opacity=".72"/><stop offset="1" stop-color="#aebfba" stop-opacity=".88"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8c9b98"/><stop offset=".45" stop-color="#f5faf8"/><stop offset=".7" stop-color="#b8c7c3"/><stop offset="1" stop-color="#6f807c"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#62e5c4"/><stop offset=".5" stop-color="#2ed0a7"/><stop offset="1" stop-color="#169d7e"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<path d="M408 287 L472 351" stroke="url(#metal)" stroke-width="7" stroke-linecap="round"/>
+<path d="M469 348 L485 364" stroke="#5f716d" stroke-width="3" stroke-linecap="round"/>
+<path d="M382 263 L417 298 L401 314 L366 279 Z" fill="url(#metal)" stroke="#62736f" stroke-width="3"/>
+<rect x="104" y="184" width="286" height="112" rx="32" transform="rotate(24 104 184)" fill="#061512" opacity=".22" filter="url(#soft)"/>
+<rect x="108" y="174" width="286" height="112" rx="31" transform="rotate(24 108 174)" fill="url(#barrel)" stroke="#748682" stroke-width="4"/>
+<path d="M133 199 L373 306" stroke="#ffffff" stroke-width="14" opacity=".42" stroke-linecap="round"/>
+<g transform="rotate(24 108 174)" stroke="#657873" stroke-linecap="round" opacity=".8">
+<path d="M168 188v20 M187 188v12 M206 188v20 M225 188v12 M244 188v20 M263 188v12 M282 188v20 M301 188v12 M320 188v20 M339 188v12 M358 188v20" stroke-width="4"/>
+</g>
+<rect x="118" y="207" width="48" height="48" rx="10" transform="rotate(24 118 207)" fill="#667873" stroke="#4c5d59" stroke-width="3"/>
+<path d="M127 217 L161 233" stroke="#9caaa6" stroke-width="5" opacity=".7"/>
+<path d="M88 207 L139 231" stroke="url(#metal)" stroke-width="18" stroke-linecap="round"/>
+<path d="M57 191 L119 220" stroke="url(#green)" stroke-width="18" stroke-linecap="round"/>
+<path d="M50 179 L128 215" stroke="url(#green)" stroke-width="12" stroke-linecap="round"/>
+<path d="M369 250 L411 269" stroke="url(#green)" stroke-width="15" stroke-linecap="round"/>
+<path d="M360 266 L402 285" stroke="url(#green)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="339" cy="287" r="6" fill="#39d7ae"/>
+</svg>
