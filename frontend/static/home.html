@@ -4,11 +4,11 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111827"><title>Seringa</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#111827;color:#f8fafc}.pulse{animation:pulse 1s infinite;box-shadow:0 0 0 0 rgba(16,185,129,.8)}@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(16,185,129,0)}}input{font-size:16px!important;background:#fff!important;color:#111827!important}</style></head>
+<style>body{background:#111827;color:#f8fafc}.pulse{animation:pulse 1s infinite;box-shadow:0 0 0 0 rgba(16,185,129,.8)}@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(16,185,129,0)}}input{font-size:16px!important;background:#fff!important;color:#111827!important}</style><link rel="stylesheet" href="theme.css?v=6"></head>
 <body class="min-h-screen">
 <audio id="premiumAlarm" preload="auto"><source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7310c3d7f5.mp3" type="audio/mpeg"></audio>
 <main class="mx-auto max-w-md p-5 pb-10">
-<header class="flex items-center justify-between py-3"><div><p class="text-xs uppercase tracking-[.2em] text-emerald-400">Seringa Premium</p><h1 class="text-2xl font-bold">Hall de Entrada</h1></div><button onclick="sair()" class="rounded-xl bg-slate-800 px-3 py-2 text-sm">Sair</button></header>
+<header class="flex items-center justify-between py-3"><div><p class="text-xs uppercase tracking-[.2em] text-emerald-400">Seringa Premium</p><h1 class="text-2xl font-bold">Hall de Entrada</h1></div><button onclick="sair()" class="rounded-xl bg-slate-800 px-3 py-2 text-sm">Sair</button><button type="button" class="theme-toggle" data-theme-toggle>☀ Claro</button></header>
 <section class="mt-4 rounded-3xl bg-slate-800 p-5"><p class="text-xl font-semibold">Olá! Como está o seu tratamento hoje?</p><p class="mt-2 text-sm text-slate-400">Organize os seus registos e lembretes num só lugar.</p></section>
 <section class="mt-5 rounded-3xl border border-emerald-500/30 bg-slate-800 p-5"><div class="flex items-start justify-between"><div><p class="text-xs uppercase tracking-wider text-emerald-400">Cozinha</p><h2 class="mt-1 text-xl font-bold">Dose de Hoje</h2><p id="localSugerido" class="mt-2 text-slate-300">Local sugerido: —</p></div><span class="text-3xl">💉</span></div>
 <button onclick="abrirRegisto()" class="mt-5 w-full rounded-2xl bg-emerald-500 px-5 py-4 text-lg font-bold text-slate-950">💉 Aplicar Seringa Agora</button></section>
@@ -34,4 +34,4 @@ function ativarSom(){alarmAudio.volume=.65;alarmAudio.play().then(()=>{alarmAudi
 function dispararAlarme(){const box=document.getElementById('alarm');box.classList.remove('hidden');box.classList.add('pulse');if(alarmAtivo)alarmAudio.play().catch(()=>{});navigator.vibrate?.([300,150,300]);setTimeout(()=>box.classList.remove('pulse'),6000)}
 function dispensarAlarme(){document.getElementById('alarm').classList.add('hidden')};function verificarAlarmes(){const agora=new Date(),hh=agora.toTimeString().slice(0,5),key=agora.toISOString().slice(0,10)+' '+hh;if(lastAlarm===key)return;let a=[];try{a=JSON.parse(localStorage.getItem('seringaAlarmes')||'[]')}catch{}if(a.some(x=>x.ativo!==false&&x.hora===hh)){lastAlarm=key;dispararAlarme()}}
 function sair(){localStorage.removeItem('seringaStatus');location.href='index.html'}atualizar();setInterval(verificarAlarmes,30000);verificarAlarmes();
-</script><script src="theme.js?v=5"></script></body></html>
+</script><script src="theme.js?v=6"></script></body></html>
