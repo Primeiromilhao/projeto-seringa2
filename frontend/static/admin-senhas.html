@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel do Admin - Seringa Universal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+</style>
+</head>
+<body class="p-6 md:p-12">
+  <div class="max-w-2xl mx-auto bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+    <h1 class="text-3xl font-black text-green-700 mb-2">Seringa Universal</h1>
+    <h2 class="text-xl font-bold text-gray-800 mb-6">Painel do Administrador: Senhas Rotativas</h2>
+    
+    <p class="text-gray-600 mb-6">
+      O sistema roda automaticamente 10 senhas. A cada dia, apenas uma destas 10 senhas é válida para aceder ao sistema (além da senha mestre permanente <code class="bg-gray-100 px-2 py-1 rounded">DBA66369</code>).
+      Isto permite-lhe dar uma senha a um cliente hoje, e amanhã essa senha já não funciona para novas pessoas.
+    </p>
+
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-6 mb-8 text-center">
+      <p class="text-sm font-bold text-green-800 uppercase tracking-widest mb-2">A Senha Válida Hoje É:</p>
+      <div id="today-pwd" class="text-5xl font-black text-green-600 tracking-widest">A CALCULAR...</div>
+      <p id="today-date" class="mt-3 text-green-700 font-medium"></p>
+    </div>
+
+    <h3 class="font-bold text-gray-800 mb-4 border-b pb-2">Previsão dos Próximos 5 Dias</h3>
+    <ul id="forecast-list" class="space-y-3 mb-8">
+      <!-- Preenchido via JS -->
+    </ul>
+
+    <div class="text-sm text-gray-500 bg-gray-50 p-4 rounded-xl border border-gray-200">
+      <strong class="text-gray-700">Atenção:</strong> Se automatizar as suas vendas por email, o email automático terá de enviar a senha correta do dia, ou terá de enviar a senha manualmente aos clientes (p. ex. por WhatsApp) olhando para este painel. Se quiser automatizar totalmente via email estático sem intervenção manual, recomendamos que envie a senha Mestre fixa.
+    </div>
+  </div>
+
+  <script>
+    const PASSWORDS = ['X7B9P', 'M4K2R', 'T8V5L', 'J3N7C', 'W9Q1D', 'F6H8Z', 'B2M4Y', 'R5P9K', 'L1D7X', 'V3C6N'];
+    
+    function getIndexForDate(dateObj) {
+      // Usar a hora UTC local ou um timezone específico. Aqui usamos o timestamp UTC truncado para dias
+      // Para manter coerência local (Portugal/Brasil), baseamos os dias no fuso horário do utilizador
+      const tzOffset = dateObj.getTimezoneOffset() * 60000;
+      const localEpoch = dateObj.getTime() - tzOffset;
+      const epochDays = Math.floor(localEpoch / 86400000);
+      // Porém, no acesso.html nós usamos `Math.floor(Date.now() / 86400000)` puramente (UTC). 
+      // Para garantir que os dois batem certo independente da hora local, vamos espelhar o acesso.html:
+      const utcEpochDays = Math.floor(dateObj.getTime() / 86400000);
+      return utcEpochDays % 10;
+    }
+
+    function formatDate(dateObj) {
+      return dateObj.toLocaleDateString('pt-PT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    const now = new Date();
+    
+    // Hoje
+    const todayIndex = Math.floor(now.getTime() / 86400000) % 10;
+    document.getElementById('today-pwd').textContent = PASSWORDS[todayIndex];
+    document.getElementById('today-date').textContent = formatDate(now);
+
+    // Previsão
+    const ul = document.getElementById('forecast-list');
+    for(let i = 1; i <= 5; i++) {
+      const future = new Date(now.getTime() + (i * 86400000));
+      const idx = Math.floor(future.getTime() / 86400000) % 10;
+      
+      const li = document.createElement('li');
+      li.className = "flex justify-between items-center p-3 bg-white border border-gray-200 rounded-lg";
+      li.innerHTML = `<span class="text-gray-600 capitalize">${formatDate(future)}</span> <strong class="text-xl text-gray-800 tracking-wider">${PASSWORDS[idx]}</strong>`;
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>

@@ -6,21 +6,44 @@
 <label for="codigo" class="mb-2 block text-left text-sm font-bold">Código de Ativação</label><input id="codigo" autocomplete="off" autocapitalize="characters" placeholder="Insira o seu código" class="mb-4 h-14 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 text-center text-lg font-bold uppercase tracking-widest outline-none focus:ring-4 focus:ring-green-100">
 <button onclick="ativar()" class="w-full rounded-2xl bg-green-600 py-4 font-black text-white shadow-lg hover:bg-green-700">ATIVAR ACESSO</button><button onclick="gratuito()" class="mt-4 w-full py-3 text-sm text-gray-500 underline hover:text-green-600">Continuar com versão Gratuita</button><div style="margin-top:22px;padding-top:18px;border-top:1px solid #e5e7eb"><p style="font-size:12px;color:#64748b;margin-bottom:10px">Abrir o Seringa pelo QR Code</p><img src="qr-seringa.png?v=20260914" alt="QR Code para abrir o Seringa" width="150" height="150" style="display:block;margin:auto;border-radius:14px"></div></section></main>
 <script>
-const HASH = '3772b2cebf4a51c18ba0f662a672d323108fb69bfd42d7ae1a19d2851c40f009';
+const DAILY_HASHES = [
+  "b859ab026e9e1242fb47c7048b0eeb0052c4e481b20f2e6018b13b8841f94991", // 0: X7B9P
+  "1b5eab5f8fe2cd0bab40d1ddf91af971198e41b7c37057a7394ba682604f94ff", // 1: M4K2R
+  "9432b4e902619072d2a2e2e002a8cef8b5afad4cce91ea9da95139d9675fa833", // 2: T8V5L
+  "355cf5925899721aaead24741e904deac2b64c225e9b76006d539c52be34f457", // 3: J3N7C
+  "910c68879875e1bdce99f2845b4e60507e8860c06c5a94b8957a1335b32a5a8f", // 4: W9Q1D
+  "0499aa539d839ae47e0f4f46d1e392d6621ea06584c493b47155a99161d7df45", // 5: F6H8Z
+  "47e78b36223147378d991ae67d08e35612c2487c8c6bd7475911cdae963fca71", // 6: B2M4Y
+  "3fa35467c9beb8ae1fcf35b4155cbad45421987d7a341f6cdad703d291d34793", // 7: R5P9K
+  "9ec30426eeab6269d741bc4ad1e79ec0888b8b9133b224e91561b05a167df982", // 8: L1D7X
+  "c99474252c5d2e343f668cce4ce85a5661412bb0965d4149300f32fa9f28a699"  // 9: V3C6N
+];
+const MASTER_OLD = '3772b2cebf4a51c18ba0f662a672d323108fb69bfd42d7ae1a19d2851c40f009';
+
 async function toHex(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
+
+function getTodayIndex() {
+  const epochDays = Math.floor(Date.now() / 86400000);
+  return epochDays % 10;
+}
+
 async function ativar() {
   const c = document.getElementById('codigo').value.replace(/\s/g, '').toUpperCase();
   if (!c) { alert('Insira o código de ativação.'); return; }
+  
   try {
     const h = await toHex(c);
-    if (h === HASH) {
+    const todayIndex = getTodayIndex();
+    
+    // Aceita a senha do dia atual, a senha fixa antiga, ou a hardcoded de emergência
+    if (h === DAILY_HASHES[todayIndex] || h === MASTER_OLD || c === 'DBA66369') {
       localStorage.setItem('seringaStatus', 'premium');
       location.href = 'inicio.html';
     } else {
-      alert('Código inválido. Verifique o código e tente novamente.');
+      alert('Código inválido ou expirado. Verifique o código de hoje e tente novamente.');
     }
   } catch(e) {
     if (c === 'DBA66369') {
@@ -31,6 +54,7 @@ async function ativar() {
     }
   }
 }
+
 function gratuito() {
   localStorage.setItem('seringaStatus', 'free');
   location.href = 'app.html';
