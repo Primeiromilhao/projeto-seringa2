@@ -19,7 +19,7 @@ html:not(.light) .site-header{background:#071312f2!important}.site-header{color:
 
 .syringe-logo{display:grid;place-items:center;width:80px;height:80px;margin:0 auto 16px;border-radius:24px;background:var(--surface2);color:var(--brand);padding:16px}.syringe-logo svg{width:100%;height:100%;display:block}.syringe-logo.large{width:92px;height:92px;margin:0 0 18px}.site-brand,.site-navlinks a{color:var(--brand)!important}.site-navlinks a:hover{color:var(--brand-strong)!important}
 
-/* Compatibilidade das páginas antigas com o sistema de temas */
+/* Compatibilidade das p├íginas antigas com o sistema de temas */
 html:not(.light) .bg-white{background:var(--surface)!important;color:var(--text)!important}
 html:not(.light) .bg-gray-50{background:var(--input)!important;color:var(--input-text)!important}
 html:not(.light) .text-gray-800,html:not(.light) .text-gray-700{color:var(--text)!important}
@@ -36,3 +36,27 @@ html.light .text-slate-300,html.light .text-slate-400,html.light .text-slate-500
 .hero-card h2, .hero-card p { text-shadow:none !important; }
 .module:hover { box-shadow:none !important; }
 .syringe-logo, .hero-card .syringe-logo { background:transparent !important; }
+
+/* ===== Seringa Saúde — camada final de contraste universal ===== */
+:root{color-scheme:light;--bg:#F8FAF9;--surface:#FFFFFF;--surface2:#EAF4F1;--text:#173B38;--muted:#526A66;--brand:#087F73;--brand-strong:#075F57;--border:#C9DDD8;--input:#FFFFFF;--input-text:#173B38;--header:rgba(248,250,249,.96)}
+html.light{color-scheme:light}
+html:not(.light){color-scheme:dark;--bg:#071312;--surface:#0D1F1D;--surface2:#15302C;--text:#F4FAF8;--muted:#C3D2CF;--brand:#39D7AE;--brand-strong:#63E6C2;--border:#31524C;--input:#102422;--input-text:#F4FAF8;--header:rgba(7,19,18,.96)}
+html,body{background:var(--bg)!important;color:var(--text)!important}body{font-size:16px}
+h1,h2,h3,h4,h5,h6,p,span,b,strong,label,li,legend{color:var(--text)}
+.muted,.text-slate-300,.text-slate-400,.text-slate-500,.text-gray-400,.text-gray-500{color:var(--muted)!important}
+.text-slate-100,.text-slate-200,.text-gray-700,.text-gray-800{color:var(--text)!important}
+.bg-white,.bg-gray-50,.bg-gray-100,.bg-slate-700,.bg-slate-800,.bg-slate-900,[class*="bg-[#0F172A]"],[class*="bg-[#111827]"],[class*="bg-emerald-950"]{background:var(--surface)!important;color:var(--text)!important;border-color:var(--border)!important}
+.border-slate-600,.border-slate-700,.border-slate-800,.border-emerald-900{border-color:var(--border)!important}
+input,select,textarea{background:var(--input)!important;color:var(--input-text)!important;border:1px solid var(--border)!important;min-height:44px}
+input::placeholder,textarea::placeholder{color:var(--muted)!important;opacity:1!important}
+.bg-\[\#10B981\],.bg-emerald-500,.bg-emerald-600,.bg-\[\#087f73\]{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+html:not(.light) .bg-\[\#10B981\],html:not(.light) .bg-emerald-500,html:not(.light) .bg-emerald-600{color:#06221D!important}
+html:not(.light) .text-white{color:var(--text)!important}
+html.light .bg-\[\#10B981\] .text-white,html.light .bg-emerald-500 .text-white,html.light .bg-emerald-600 .text-white,html.light .bg-\[\#087f73\] .text-white{color:#fff!important}
+html.light .ss-home-card,html.light .ss-tool,html.light .card,html.light .ss-welcome-card,html.light .ss-attention-card,html.light .ss-privacy-strip,html:not(.light) .ss-home-card,html:not(.light) .ss-tool,html:not(.light) .card,html:not(.light) .ss-welcome-card,html:not(.light) .ss-attention-card,html:not(.light) .ss-privacy-strip{background:var(--surface)!important;color:var(--text)!important;border-color:var(--border)!important}
+.ss-tool b,.ss-home-card h3,.card h1,.card h2,.card h3,.card h4{color:var(--text)!important}
+.ss-tool span,.ss-home-card p,.card p{color:var(--muted)!important}
+.ss-bottom-nav{background:var(--surface)!important;border-color:var(--border)!important}.ss-bottom-nav a{color:var(--muted)!important}.ss-bottom-nav a.active,.ss-bottom-nav a:hover{color:var(--brand)!important;background:var(--surface2)!important}
+.ss-back-home button:first-child{background:var(--surface)!important;color:var(--brand)!important;border-color:var(--border)!important}.ss-back-home button:last-child{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important}
+.site-header{background:var(--header)!important;color:var(--text)!important;border-color:var(--border)!important}.theme-toggle{background:var(--surface2)!important;color:var(--brand)!important;border-color:var(--border)!important}
+a{color:var(--brand)}a:hover{color:var(--brand-strong)}.text-xs{line-height:1.4}

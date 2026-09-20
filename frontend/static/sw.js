@@ -2,7 +2,7 @@
 
 [Reading 63 lines from start (total: 63 lines, 0 remaining)]
 
-const CACHE = 'seringa-v22-tema-adaptativo';
+const CACHE = 'seringa-v23-contraste-universal';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -21,8 +21,8 @@ const ASSETS = [
   './styles.css?v=4.0',
   './app.js?v=4.0',
   './manifest.webmanifest',
-  './theme.css?v=9',
-  './theme.js?v=9',
+  './theme.css?v=10',
+  './theme.js?v=10',
   './seringa-modules.css?v=4',
   './seringa-modules.js?v=3',
   './seringa-home.js?v=2',
