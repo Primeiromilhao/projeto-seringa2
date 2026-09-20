@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v17-modulos-completo';
+const CACHE = 'seringa-v18-home-interativa';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -17,8 +17,9 @@ const ASSETS = [
   './manifest.webmanifest',
   './theme.css?v=9',
   './theme.js?v=9',
-  './seringa-modules.css?v=1',
-  './seringa-modules.js?v=1',
+  './seringa-modules.css?v=2',
+  './seringa-modules.js?v=2',
+  './seringa-home.js?v=1',
   './seringa-calendar.js?v=1',
   './seringa-pos-contacto.js?v=1',
   './modulo-cronico.html',

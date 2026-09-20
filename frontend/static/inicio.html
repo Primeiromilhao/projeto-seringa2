@@ -1,38 +1,34 @@
 <!doctype html>
 <html lang="pt-PT">
 <head>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F0F7F6"><link rel="icon" type="image/svg+xml" href="logo-seringa-3d.svg?v=20260920"><link rel="apple-touch-icon" href="logo-seringa-3d.svg?v=20260920"><title>Seringa</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>html{background:#F0F7F6}body{min-height:100vh;background:#F0F7F6;color:#173b37}button{touch-action:manipulation}</style>
-<script>
-if (localStorage.getItem('seringaStatus') !== 'premium') {
-  location.href = 'acesso.html';
-}
-</script>
-<link rel="stylesheet" href="theme.css?v=9"><script src="seringa-shield.js?v=1"></script>
+<meta name="theme-color" content="#f3fbf9"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>Seringa Saúde</title>
+<link rel="stylesheet" href="theme.css?v=9"><link rel="stylesheet" href="seringa-modules.css?v=2"><script src="seringa-shield.js?v=1"></script>
+<script>if(localStorage.getItem('seringaStatus')!=='premium'){location.href='acesso.html'}</script>
 </head>
-<body><div class="site-header"><div class="wrap site-nav"><a class="site-brand" href="index.html"><img src="logo-seringa-3d.svg?v=20260920" alt="Seringa Saúde" width="42" height="42"><span>SERINGA</span></a><nav class="site-navlinks"><a href="index.html#projeto">Projeto</a><a href="index.html#seguranca">Segurança</a><a href="acesso.html" style="font-size:12px;opacity:0.8">Trocar Acesso</a></nav><div class="site-actions"><button type="button" class="theme-toggle" data-theme-toggle></button></div></div></div><main class="start-space">
-<header class="mb-6 text-center"><div class="syringe-logo" aria-label="Símbolo de seringa" role="img"><img src="logo-seringa-3d.svg?v=20260920" alt="Seringa Saúde" width="40" height="40"></div><h1 class="text-3xl font-black tracking-tight">Bem-vindo</h1><p class="mt-2 text-sm leading-6 text-slate-600">Escolha o ambiente que melhor corresponde à sua realidade.</p></header>
-<section class="mb-5 rounded-3xl bg-white p-5 shadow-sm"><h2 class="text-lg font-black">Um espaço feito para ajudar</h2><p class="mt-2 text-sm leading-6 text-slate-600">O Seringa organiza informação, registos e acompanhamento de diferentes realidades que envolvem agulhas e injeções, com foco em simplicidade, privacidade e acolhimento.</p><p class="mt-3 rounded-2xl bg-emerald-50 p-3 text-sm font-semibold leading-5 text-emerald-900">“Você não precisa descobrir tudo sozinho. Entre pela sala certa e encontre o espaço que foi preparado para você.”</p></section>
-<section class="mb-5"><h2 class="text-xl font-black">Escolha uma categoria</h2><p class="mb-3 text-xs text-slate-500">Cada botão abre um ambiente específico.</p><div class="space-y-3">
-<a href="modulo-cronico.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-blue-50 text-2xl">🩺</div><div><h3 class="font-black">Doentes Crónicos</h3><p class="mt-1 text-xs leading-5 text-slate-500">Insulina, Mounjaro, Ozempic e outros tratamentos de uso crónico.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-fertilidade.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-pink-50 text-2xl">🧬</div><div><h3 class="font-black">Fertilidade e Hormonas</h3><p class="mt-1 text-xs leading-5 text-slate-500">Ambiente para tratamentos de fertilidade e terapias hormonais.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-biologicas.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-violet-50 text-2xl">🧬</div><div><h3 class="font-black">Terapias Biológicas e Imunologia</h3><p class="mt-1 text-xs leading-5 text-slate-500">Tratamentos biológicos, conservação e acompanhamento de longo prazo.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-diabetes.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-red-50 text-2xl">🩸</div><div><h3 class="font-black">Diabetes e MDI</h3><p class="mt-1 text-xs leading-5 text-slate-500">Registo de múltiplas doses, glicemia e rotação.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-intramuscular.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-orange-50 text-2xl">💪</div><div><h3 class="font-black">Terapias Intramusculares</h3><p class="mt-1 text-xs leading-5 text-slate-500">Acompanhamento de terapias IM e alta viscosidade.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-desmame.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-indigo-50 text-2xl">📉</div><div><h3 class="font-black">Desmame e Manutenção</h3><p class="mt-1 text-xs leading-5 text-slate-500">Registo de redução ou manutenção conforme plano clínico.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-estetica.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-purple-50 text-2xl">✨</div><div><h3 class="font-black">Estética Avançada</h3><p class="mt-1 text-xs leading-5 text-slate-500">Registos e acompanhamento de procedimentos estéticos.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-corporal.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-50 text-2xl">🖊️</div><div><h3 class="font-black">Modificação Corporal</h3><p class="mt-1 text-xs leading-5 text-slate-500">Tatuagem, piercing e acompanhamento da cicatrização.</p></div><span class="ml-auto text-xl">›</span></div></a>
-<a href="modulo-acupuntura.html" class="block rounded-3xl bg-white p-4 shadow-sm border border-slate-100"><div class="flex items-center gap-4"><div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-teal-50 text-2xl">🪡</div><div><h3 class="font-black">Acupuntura e Fisioterapia</h3><p class="mt-1 text-xs leading-5 text-slate-500">Registos de sessões, dor e evolução para discussão profissional.</p></div><span class="ml-auto text-xl">›</span></div></a>
-</div></section><section class="rounded-3xl bg-white p-4 text-center shadow-sm"><p class="text-xs leading-5 text-slate-500">O Seringa é uma ferramenta de apoio e organização. Não diagnostica, não prescreve, não altera doses e não substitui orientação profissional.</p></section>
-</main><script src="theme.js?v=9"></script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').catch(function(){});
-}
-</script>
+<body>
+<main class="ss-home">
+<section class="ss-home-hero">
+<div class="ss-home-brand"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Seu acompanhamento, num só lugar</small></div></div>
+<h1 style="font-size:28px;font-weight:950;margin:4px 0 6px">Bem-vindo 👋</h1><p style="font-size:13px;color:var(--ss-muted);line-height:1.5">Escolha um ambiente e entre diretamente nas ferramentas do seu acompanhamento.</p>
+<input class="ss-home-search" type="search" placeholder="Pesquisar módulo..." aria-label="Pesquisar módulo">
+<div class="ss-home-filters" aria-label="Filtros"><button class="ss-home-filter active" data-filter="all">Todos</button><button class="ss-home-filter" data-filter="tratamento">Tratamentos</button><button class="ss-home-filter" data-filter="acompanhamento">Acompanhamento</button><button class="ss-home-filter" data-filter="bemestar">Bem-estar</button></div>
+</section>
+<section class="ss-home-section-title"><h2>Escolha o seu módulo</h2><p>Cada cartão é interativo e abre a sala correspondente.</p></section>
+<section class="ss-home-grid">
+<a class="ss-home-card" data-href="modulo-cronico.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">💉</div><h3>Doentes Crónicos</h3><p>Injeções, doses, locais, histórico e lembretes.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-fertilidade.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🧬</div><h3>Fertilidade e Hormonas</h3><p>Janela, doses, ciclo e conservação.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-biologicas.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🧫</div><h3>Terapias Biológicas</h3><p>Calendário, caneta, frio, reações e sintomas.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-diabetes.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🩸</div><h3>Diabetes e MDI</h3><p>Insulina, rotação, glicemia e registos.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-intramuscular.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">💪</div><h3>Terapias Intramusculares</h3><p>Zonas, dor, manuseio e histórico.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-desmame.html" data-category="acompanhamento" tabindex="0"><div><div class="ss-home-icon">📉</div><h3>Desmame e Manutenção</h3><p>Plano, rebote, hábitos e relatório.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-estetica.html" data-category="bemestar" tabindex="0"><div><div class="ss-home-icon">✨</div><h3>Estética Avançada</h3><p>Sessões, simetria, evolução e reações.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-corporal.html" data-category="acompanhamento" tabindex="0"><div><div class="ss-home-icon">🖊️</div><h3>Modificação Corporal</h3><p>Registo, contagem, evolução e cuidados.</p></div><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-acupuntura.html" data-category="bemestar" tabindex="0"><div><div class="ss-home-icon">🪡</div><h3>Acupuntura e Fisioterapia</h3><p>Sessão, dor, pontos e evolução.</p></div><span class="ss-home-arrow">›</span></a>
+</section>
+<div class="ss-home-cta" onclick="location.href='calendario.html'">📅 Abrir Calendário e Lembretes<small>Veja compromissos e acompanhe a sua rotina.</small></div>
+<div class="ss-brand no-print" style="margin-top:16px"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Privacidade · Offline-first · Mobile-first</small></div></div>
+</main>
+<nav class="ss-bottom-nav no-print" aria-label="Navegação principal"><a href="inicio.html" class="active"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="premium.html"><span>♙</span>Perfil</a></nav>
+<script src="theme.js?v=9"></script><script src="seringa-home.js?v=1" defer></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
 </body></html>
-
-
