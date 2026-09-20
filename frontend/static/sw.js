@@ -1,9 +1,12 @@
-const CACHE = 'seringa-v12-logo';
+const CACHE = 'seringa-v13-png-logo';
 const BASE = './';
 const ASSETS = [
   BASE,
   './index.html',
   './logo-seringa-3d.svg?v=20260920',
+  './icon-192.png?v=20260920',
+  './icon-512.png?v=20260920',
+  './apple-touch-icon.png?v=20260920',
   './manifest.webmanifest',
   './inicio.html',
   './app.html',
