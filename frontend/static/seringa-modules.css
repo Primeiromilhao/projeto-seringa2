@@ -68,3 +68,16 @@ body>.no-print.fixed.inset-x-0.bottom-0{bottom:78px!important;z-index:40!importa
 .ss-next-card{display:flex;align-items:center;gap:11px;margin-top:13px;padding:14px;border-radius:20px;background:#087f73;color:#fff;box-shadow:0 9px 22px rgba(8,127,115,.22);cursor:pointer}.ss-next-icon{width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:20px}.ss-next-card div:nth-child(2){flex:1}.ss-next-card span{display:block;font-size:8px;letter-spacing:.12em;font-weight:900;opacity:.8}.ss-next-card b{display:block;font-size:12px;margin-top:2px}.ss-next-card small{display:block;font-size:9px;opacity:.78;margin-top:2px}.ss-next-card>strong{font-size:23px}
 .ss-privacy-strip{display:grid;grid-template-columns:30px 1fr 30px 1fr;align-items:center;gap:7px;margin-top:13px;padding:13px 10px;border:1px solid #dcefeb;border-radius:19px;background:#fff}.ss-privacy-strip>span{width:28px;height:28px;border-radius:10px;background:#dff7f1;color:var(--ss-teal);display:grid;place-items:center;font-weight:900}.ss-privacy-strip b{display:block;font-size:9px}.ss-privacy-strip small{display:block;font-size:8px;color:var(--ss-muted);line-height:1.25;margin-top:2px}
 @media(max-width:380px){.ss-dashboard{padding-left:13px!important;padding-right:13px!important}.ss-dashboard-grid{gap:7px!important}.ss-dashboard-grid .ss-home-card{min-height:126px!important;padding:11px!important}.ss-privacy-strip{grid-template-columns:28px 1fr 28px 1fr;gap:5px}}
+
+/* Navegação interna: apenas Voltar + Início. A barra inferior pertence somente ao painel inicial. */
+body.ss-inner-page .ss-bottom-nav{display:none!important}
+body.ss-inner-page main>a[href="inicio.html"]{display:none!important}
+body.ss-inner-page .ss-back-home{position:fixed;left:10px;right:10px;bottom:76px;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body.ss-inner-page .ss-back-home button{border:1px solid #cfe5e1;background:rgba(255,255,255,.97);color:#087f73;border-radius:16px;padding:11px 10px;font-size:12px;font-weight:900;box-shadow:0 8px 20px rgba(18,59,69,.12);backdrop-filter:blur(10px)}
+body.ss-inner-page .ss-back-home button:last-child{background:#087f73;color:#fff;border-color:#087f73}
+/* Relatório de módulo: fica no fim real da página, nunca fixo sobre o conteúdo. */
+body.ss-inner-page>footer.no-print.fixed.inset-x-0.bottom-0,
+body.ss-inner-page>div.no-print.fixed.inset-x-0.bottom-0{position:static!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;z-index:auto!important;width:auto!important;margin:24px 16px 110px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+body.ss-inner-page>footer.no-print.fixed.inset-x-0.bottom-0 button,
+body.ss-inner-page>div.no-print.fixed.inset-x-0.bottom-0 button{width:100%!important;max-width:430px!important;margin:0 auto!important}
+@media print{body.ss-inner-page .ss-back-home{display:none!important}}

@@ -1,4 +1,6 @@
-const CACHE = 'seringa-v20-perfil-navegacao';
+[Reading 63 lines from start (total: 63 lines, 0 remaining)]
+
+const CACHE = 'seringa-v21-navegacao-limpa';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -19,9 +21,9 @@ const ASSETS = [
   './manifest.webmanifest',
   './theme.css?v=9',
   './theme.js?v=9',
-  './seringa-modules.css?v=2',
-  './seringa-modules.js?v=2',
-  './seringa-home.js?v=1',
+  './seringa-modules.css?v=4',
+  './seringa-modules.js?v=3',
+  './seringa-home.js?v=2',
   './seringa-calendar.js?v=1',
   './seringa-pos-contacto.js?v=1',
   './modulo-cronico.html',
@@ -61,3 +63,5 @@ self.addEventListener('fetch', event => {
       .catch(() => caches.match(event.request).then(r => r || caches.match(BASE)))
   );
 });
+
+[executed on device: PrimeiroMilhao (eaf5822a-1f64-40e2-b3c3-dffde84d6562)]
