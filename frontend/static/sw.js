@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v19-fisioterapia';
+const CACHE = 'seringa-v20-perfil-navegacao';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -9,6 +9,8 @@ const ASSETS = [
   './apple-touch-icon.png?v=20260921',
   './manifest.webmanifest',
   './inicio.html',
+  './perfil.html',
+  './relatorio.html',
   './app.html',
   './acesso.html',
   './hall-entrada.html',
