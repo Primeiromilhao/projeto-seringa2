@@ -5,15 +5,14 @@
 <meta name="theme-color" content="#f3fbf9"><meta name="description" content="Seringa Saúde — acompanhamento pessoal">
 <link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Seringa Saúde</title>
-<link rel="stylesheet" href="theme.css?v=9"><link rel="stylesheet" href="seringa-modules.css?v=4">
-<script src="seringa-shield.js?v=1"></script>
+<link rel="stylesheet" href="theme.css?v=12"><link rel="stylesheet" href="seringa-modules.css?v=4"><link rel="stylesheet" href="seringa-ui.css?v=3"><script src="seringa-shield.js?v=2"></script>
 <script>if(localStorage.getItem('seringaStatus')!=='premium')location.href='acesso.html'</script>
 </head>
 <body>
 <main class="ss-dashboard">
 <header class="ss-dashboard-top">
 <div class="ss-home-brand"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Seu acompanhamento, num só lugar</small></div></div>
-<a class="ss-profile-mini" href="perfil.html" aria-label="Abrir perfil"><span id="homeAvatar">☺</span><b>Perfil</b></a>
+<button type="button" class="theme-toggle no-print" data-theme-toggle>Escuro</button><a class="ss-profile-mini" href="perfil.html" aria-label="Abrir perfil"><span id="homeAvatar">☺</span><b>Perfil</b></a>
 </header>
 <section class="ss-welcome-card">
 <div class="ss-welcome-photo"><img id="homePhoto" alt="Foto do perfil"><span id="homeInitial">☺</span></div>
@@ -40,6 +39,6 @@
 <nav class="ss-bottom-nav no-print" aria-label="Navegação principal">
 <a href="inicio.html" class="active"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="perfil.html"><span>♙</span>Perfil</a>
 </nav>
-<script src="theme.js?v=9"></script><script src="seringa-home.js?v=2" defer></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
+<script src="theme.js?v=12"></script><script src="seringa-home.js?v=2" defer></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
 <script src="seringa-modules.js?v=3" defer></script>
 </body></html>

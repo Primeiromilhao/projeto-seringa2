@@ -1,18 +1,13 @@
 <!doctype html>
 <html lang="pt-PT"><head>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16a34a"><title>Seringa</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="theme.css?v=9"><script src="seringa-shield.js?v=1"></script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16a34a"><title>Seringa</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="theme.css?v=12"><link rel="stylesheet" href="seringa-ui.css?v=3"><script src="seringa-shield.js?v=2"></script>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-green-50 to-gray-100 text-gray-800"><div class="site-header"><div class="wrap site-nav"><a class="site-brand" href="index.html"><span>SERINGA</span></a><nav class="site-navlinks"><a href="index.html#projeto">Projeto</a><a href="index.html#seguranca">Segurança</a></nav><div class="site-actions"><button type="button" class="theme-toggle" data-theme-toggle></button></div></div></div><main class="min-h-screen flex items-center justify-center p-5"><section class="w-full max-w-sm rounded-3xl bg-white p-7 shadow-xl text-center"><div class="syringe-logo" aria-label="Símbolo de seringa" role="img"><img src="logo-real.png?v=20260914" alt="" width="48" height="48"></div><h1 class="text-4xl font-black text-green-600">Seringa</h1><p class="mt-2 mb-8 text-sm text-gray-500">Controlo Fácil de Aplicações</p>
 <label for="codigo" class="mb-2 block text-left text-sm font-bold">Código de Ativação</label>
 <input id="codigo" autocomplete="off" autocapitalize="characters" placeholder="Insira o seu código" class="mb-4 h-14 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 text-center text-lg font-bold uppercase tracking-widest outline-none focus:ring-4 focus:ring-green-100">
 <button onclick="ativar()" class="w-full rounded-2xl bg-green-600 py-4 font-black text-white shadow-lg hover:bg-green-700">ATIVAR ACESSO</button>
 
-<div class="mt-6 border-t border-gray-200 pt-6">
-  <p class="text-sm text-gray-500 mb-3">Ainda não tem um código de acesso?</p>
-  <a href="#seu-link-de-pagamento-aqui" target="_blank" class="block w-full rounded-2xl bg-gray-800 py-4 font-bold text-white hover:bg-gray-900 shadow-md">💳 COMPRAR ACESSO PREMIUM</a>
-</div>
-
-<button onclick="gratuito()" class="mt-4 w-full py-3 text-sm text-gray-500 underline hover:text-green-600">Continuar com versão Gratuita</button>
+<div class="mt-6 border-t border-gray-200 pt-6"><p class="text-sm text-gray-500">O acesso é protegido por código. Depois da ativação, o aplicativo abre diretamente no ambiente completo.</p></div>
 <div style="margin-top:22px;padding-top:18px;border-top:1px solid #e5e7eb">
   <p style="font-size:12px;color:#64748b;margin-bottom:10px">Abrir o Seringa pelo QR Code</p>
   <img src="qr-seringa.png?v=20260914" alt="QR Code para abrir o Seringa" width="150" height="150" style="display:block;margin:auto;border-radius:14px">
@@ -68,11 +63,7 @@ async function ativar() {
   }
 }
 
-function gratuito() {
-  localStorage.setItem('seringaStatus', 'free');
-  location.href = 'app.html';
-}
 document.getElementById('codigo').addEventListener('keydown', e => { if (e.key === 'Enter') ativar(); });
-</script><script src="theme.js?v=9"></script></body></html>
+</script><script src="theme.js?v=12"></script></body></html>
 <!-- Seringa static release: 2026-09-12 -->
 

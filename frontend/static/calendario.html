@@ -9,13 +9,13 @@
 <style>
 .toggle-checkbox:checked{right:0;border-color:#10B981}.toggle-checkbox:checked+.toggle-label{background:#10B981}
 </style>
-<link rel="stylesheet" href="theme.css?v=9"><script src="seringa-shield.js?v=1"></script>
+<link rel="stylesheet" href="theme.css?v=12"><link rel="stylesheet" href="seringa-ui.css?v=3"><script src="seringa-shield.js?v=2"></script>
 </head>
 <body class="bg-[#111827] text-white font-sans min-h-screen p-4 flex flex-col items-center">
 <div class="w-full max-w-md">
 <header class="flex items-center gap-3 mb-6 pt-2 pb-4 border-b border-slate-800">
 <button onclick="window.history.back()" class="text-slate-400 hover:text-white text-2xl font-bold p-2 -ml-2">←</button>
-<h1 class="text-xl font-bold text-slate-100 flex items-center gap-2">📅 Calendário e Lembretes</h1>
+<button type="button" class="theme-toggle no-print" data-theme-toggle>Escuro</button><h1 class="text-xl font-bold text-slate-100 flex items-center gap-2">📅 Calendário e Lembretes</h1>
 </header>
 <div class="bg-slate-800 p-5 rounded-3xl border border-slate-700 shadow-lg relative overflow-hidden mb-6">
 <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
@@ -51,4 +51,4 @@ function render(){const arr=JSON.parse(localStorage.getItem(KEY)||'[]');document
 function esc(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 const h=localStorage.getItem('seringaHoraProxima');if(h)document.getElementById('horaProximaDose').textContent=h;const hist=JSON.parse(localStorage.getItem('seringaHistorico')||'[]');if(hist.length){const d=new Date(hist[0].data+'T00:00:00');d.setDate(d.getDate()+7);document.getElementById('dataProximaDose').textContent=d.toLocaleDateString('pt-PT',{weekday:'short',day:'2-digit',month:'short'});const ordem=['Superior Esquerdo','Superior Direito','Médio Direito','Inferior Direito','Inferior Esquerdo','Médio Esquerdo'];const i=ordem.indexOf(hist[0].local);document.getElementById('zonaProxima').textContent=i>=0?ordem[(i+1)%ordem.length]:'Zona seguinte do rodízio';}render();
 </script>
-<script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=8"></script><script src="seringa-modules.js?v=2" defer></script></body></html>
+<script src="seringa-calendar.js?v=1"></script><script src="theme.js?v=12"></script><script src="seringa-modules.js?v=2" defer></script></body></html>

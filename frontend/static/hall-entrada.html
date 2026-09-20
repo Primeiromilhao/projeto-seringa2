@@ -1,14 +1,1 @@
-<!doctype html>
-<html lang="pt-PT">
-<head>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self';">
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=inicio.html">
-<title>Seringa — A redirecionar...</title>
-<script>location.replace('inicio.html');</script>
-<script src="seringa-shield.js?v=1"></script>
-</head>
-<body>
-<p>A carregar o Espaço Principal... <a href="inicio.html">Clique aqui se não for redirecionado</a>.</p>
-</body>
-</html>
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=acesso.html"><title>Seringa Saúde</title></head><body><p>A abrir o Seringa Saúde…</p><script>location.replace(localStorage.getItem("seringaStatus")==="premium"?"inicio.html":"acesso.html")</script></body></html>
