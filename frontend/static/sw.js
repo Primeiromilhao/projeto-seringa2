@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v18-home-interativa';
+const CACHE = 'seringa-v19-fisioterapia';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -27,7 +27,7 @@ const ASSETS = [
   './modulo-biologicas.html',
   './modulo-intramuscular.html',
   './modulo-diabetes.html',
-  './modulo-acupuntura.html',
+  './modulo-fisioterapia.html',
   './modulo-estetica.html',
   './modulo-corporal.html',
   './modulo-desmame.html'
