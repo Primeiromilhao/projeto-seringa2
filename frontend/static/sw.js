@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v14-3d-png-logo';
+const CACHE = 'seringa-v15-download-app';
 const BASE = './';
 const ASSETS = [
   BASE,
