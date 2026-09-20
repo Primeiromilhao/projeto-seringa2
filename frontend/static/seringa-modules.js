@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const page=location.pathname.split('/').pop()||'inicio.html';document.querySelectorAll('.ss-bottom-nav a').forEach(a=>{const href=(a.getAttribute('href')||'').split('/').pop();if(href===page)a.classList.add('active')})});
