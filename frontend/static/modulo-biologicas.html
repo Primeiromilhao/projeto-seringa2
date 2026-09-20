@@ -11,10 +11,10 @@ html,body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#9
 input,select,textarea{font-size:16px!important;background:#fff!important;color:#0f172a!important}button{touch-action:manipulation}.tool{min-height:150px}
 @media print{body{background:#fff;color:#111}.no-print{display:none!important}.card{background:#fff;color:#111;border:1px solid #ddd}}
 </style>
-<script src="seringa-shield.js?v=1"></script>
+<link rel="stylesheet" href="seringa-modules.css?v=1"><script src="seringa-shield.js?v=1"></script>
 </head>
 <body>
-<main class="mx-auto max-w-xl px-5 pb-28 pt-5">
+<main class="mx-auto max-w-xl px-5 pb-28 pt-5"><div class="ss-brand no-print"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Módulo de acompanhamento</small></div></div>
 <a href="inicio.html" class="text-sm font-bold text-emerald-400">← Voltar ao Espaço Principal</a>
 <div class="site-actions float-right"><button type="button" class="theme-toggle rounded-xl bg-slate-800 px-3 py-1.5 text-xs font-bold text-slate-300" data-theme-toggle></button></div>
 <header class="my-6 clear-both">
@@ -83,7 +83,7 @@ input,select,textarea{font-size:16px!important;background:#fff!important;color:#
 <button onclick="guardarSintoma()" class="rounded-xl bg-[#10B981] py-3 font-black text-slate-900">REGISTAR SINTOMA</button></div><div id="symLista" class="mt-4 space-y-2"></div>
 </section>
 <section class="card mt-5 rounded-3xl p-5"><h2 class="font-black">Privacidade e segurança</h2><p class="mt-2 text-xs leading-5 muted">Os registos ficam no armazenamento local do navegador. O Seringa organiza dados de acompanhamento; não prescreve, não altera doses, não diagnostica e não substitui a equipa de saúde.</p></section>
-</main>
+</main><nav class="ss-bottom-nav no-print" aria-label="Navegação principal"><a href="inicio.html"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="premium.html"><span>♙</span>Perfil</a></nav>
 <div class="no-print fixed inset-x-0 bottom-0 z-20 border-t border-slate-700 bg-[#131B2B]/95 p-3 backdrop-blur"><div class="mx-auto max-w-xl"><button onclick="gerarRelatorio()" class="w-full rounded-2xl bg-[#1E293B] border border-slate-600 py-3 font-black text-[#10B981]">📊 Analisar Gráfico de Evolução</button></div></div>
 <script>
 const K=k=>'seringa_m3_'+k;const R=k=>JSON.parse(localStorage.getItem(K(k))||'[]');const W=(k,v)=>localStorage.setItem(K(k),JSON.stringify(v));

@@ -1,4 +1,4 @@
-const CACHE = 'seringa-v15-download-app';
+const CACHE = 'seringa-v16-modulos-ui';
 const BASE = './';
 const ASSETS = [
   BASE,

@@ -10,10 +10,10 @@
 html,body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#94A3B8}input,select,textarea{font-size:16px!important;background:#fff!important;color:#0f172a!important}button{touch-action:manipulation}.tool{min-height:150px}
 @media print{body{background:#fff;color:#111}.no-print{display:none!important}.card{background:#fff;color:#111;border:1px solid #ddd}}
 </style>
-<script src="seringa-shield.js?v=1"></script>
+<link rel="stylesheet" href="seringa-modules.css?v=1"><script src="seringa-shield.js?v=1"></script>
 </head>
 <body>
-<main class="mx-auto max-w-xl px-5 pb-28 pt-5">
+<main class="mx-auto max-w-xl px-5 pb-28 pt-5"><div class="ss-brand no-print"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Módulo de acompanhamento</small></div></div>
 <a href="inicio.html" class="text-sm font-bold text-emerald-400">← Voltar ao Espaço Principal</a>
 <div class="site-actions float-right"><button type="button" class="theme-toggle rounded-xl bg-slate-800 px-3 py-1.5 text-xs font-bold text-slate-300" data-theme-toggle></button></div>
 <header class="my-6 clear-both"><p class="text-xs font-black tracking-[.18em] text-emerald-400">SERINGA PREMIUM</p><h1 class="mt-2 text-3xl font-black leading-tight">Módulo 4: Diabetes e Múltiplas Doses Diárias (MDI)</h1><p class="mt-2 text-sm muted">Organização de aplicações, registos glicémicos e rotação de zonas conforme o plano já indicado pela equipa.</p></header>
@@ -30,7 +30,7 @@ html,body{background:#131B2B;color:#fff}.card{background:#1E293B}.muted{color:#9
 <section id="glicemia" class="card mt-5 rounded-3xl p-5"><h2 class="text-xl font-black">📉 Janelas Glicémicas</h2><p class="mt-1 text-xs muted">Registe valores medidos e episódios. Metas e decisões clínicas devem vir da equipa.</p><div class="mt-4 grid gap-3"><label class="text-xs font-bold">Data e hora<input id="glDate" type="datetime-local" class="mt-1 w-full rounded-xl p-3"></label><label class="text-xs font-bold">Glicemia medida (mg/dL)<input id="glValue" type="number" min="20" max="600" class="mt-1 w-full rounded-xl p-3" placeholder="Ex.: 110"></label><label class="text-xs font-bold">Evento<select id="glEvent" class="mt-1 w-full rounded-xl p-3"><option>Sem evento</option><option>Hipoglicemia (&lt; 70)</option><option>Hiperglicemia (&gt; 180)</option><option>Em jejum</option><option>Pós-prandial</option><option>Outro</option></select></label><textarea id="glObs" rows="2" class="w-full rounded-xl p-3" placeholder="Observação / orientação recebida"></textarea><button onclick="saveGly()" class="rounded-xl bg-[#10B981] py-3 font-black">REGISTAR GLICEMIA</button></div><div id="glLista" class="mt-4 space-y-2"></div></section>
 <section id="sos" class="card mt-5 rounded-3xl p-5"><h2 class="text-xl font-black">🤒 Protocolos SOS</h2><p class="mt-1 text-xs leading-5 muted">Em doença, infeção ou stress, registe o contexto e siga o plano de dias de doença que lhe foi fornecido pelo profissional. O aplicativo não altera doses.</p><textarea id="sosText" rows="4" class="mt-4 w-full rounded-xl p-3" placeholder="Sintomas, orientação recebida ou ocorrência"></textarea><button onclick="saveSos()" class="mt-3 w-full rounded-xl bg-[#10B981] py-3 font-black">REGISTAR OCORRÊNCIA</button><div id="sosLista" class="mt-4 space-y-2"></div></section>
 <section class="card mt-5 rounded-3xl p-5"><h2 class="font-black">Privacidade e segurança</h2><p class="mt-2 text-xs leading-5 muted">Os registos ficam no armazenamento local do navegador. O Seringa não diagnostica, não prescreve, não calcula correções e não substitui o plano clínico.</p></section>
-</main>
+</main><nav class="ss-bottom-nav no-print" aria-label="Navegação principal"><a href="inicio.html"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="premium.html"><span>♙</span>Perfil</a></nav>
 <div class="no-print fixed inset-x-0 bottom-0 z-20 border-t border-slate-700 bg-[#131B2B]/95 p-3"><div class="mx-auto max-w-xl"><button onclick="gerarDiario()" class="w-full rounded-2xl bg-[#1E293B] border border-slate-600 py-3 font-black text-[#10B981]">📊 Gerar Diário Glicémico</button></div></div>
 <script>
 const K='seringa_m4_',read=k=>JSON.parse(localStorage.getItem(K+k)||'[]'),write=(k,v)=>localStorage.setItem(K+k,JSON.stringify(v));
