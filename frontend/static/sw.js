@@ -1,6 +1,8 @@
+[Reading 67 lines from start (total: 67 lines, 0 remaining)]
+
 [Reading 63 lines from start (total: 63 lines, 0 remaining)]
 
-const CACHE = 'seringa-v21-navegacao-limpa';
+const CACHE = 'seringa-v22-tema-adaptativo';
 const BASE = './';
 const ASSETS = [
   BASE,
@@ -63,5 +65,7 @@ self.addEventListener('fetch', event => {
       .catch(() => caches.match(event.request).then(r => r || caches.match(BASE)))
   );
 });
+
+[executed on device: PrimeiroMilhao (eaf5822a-1f64-40e2-b3c3-dffde84d6562)]
 
 [executed on device: PrimeiroMilhao (eaf5822a-1f64-40e2-b3c3-dffde84d6562)]
