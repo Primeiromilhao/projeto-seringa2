@@ -1,4 +1,4 @@
-/* Seringa Universal Calendar + Alarm v1.0 */
+/* Seringa Saúde Calendar + Alarm v1.0 */
 (function(){
   const KEY='seringa_alarm_events_v1';
   const sounds=[
