@@ -1,16 +1,31 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const page=location.pathname.split('/').pop()||'inicio.html';
-  document.querySelectorAll('.ss-home-card[data-href]').forEach(card=>{
-    card.addEventListener('click',()=>{location.href=card.dataset.href});
-    card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();location.href=card.dataset.href}})
-  });
-  document.querySelectorAll('.ss-home-filter').forEach(btn=>btn.addEventListener('click',()=>{
-    document.querySelectorAll('.ss-home-filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
-    const filter=btn.dataset.filter;
-    document.querySelectorAll('.ss-home-card').forEach(card=>card.style.display=(!filter||filter==='all'||card.dataset.category===filter)?'flex':'none');
-  }));
-  document.querySelectorAll('.ss-home-search').forEach(input=>input.addEventListener('input',()=>{
-    const q=input.value.toLowerCase().trim();
-    document.querySelectorAll('.ss-home-card').forEach(card=>card.style.display=card.textContent.toLowerCase().includes(q)?'flex':'none');
-  }));
+ const cards=[...document.querySelectorAll('.ss-home-card[data-href]')];
+ cards.forEach(card=>{
+  card.addEventListener('click',()=>location.href=card.dataset.href);
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();location.href=card.dataset.href}});
+ });
+ const search=document.getElementById('homeSearch');
+ if(search)search.addEventListener('input',()=>{const q=search.value.toLowerCase().trim();cards.forEach(c=>c.style.display=c.textContent.toLowerCase().includes(q)?'flex':'none')});
+ carregarPerfilHome();
+ carregarLembreteHome();
 });
+async function carregarPerfilHome(){
+ const p=JSON.parse(localStorage.getItem('seringaPerfil')||'{}');
+ const nome=(p.nome||'').trim();
+ const g=document.getElementById('homeGreeting');
+ const initial=document.getElementById('homeInitial');
+ if(g)g.textContent=nome?'Olá, '+nome+'!':'Olá!';
+ if(initial)initial.textContent=nome?nome.charAt(0).toUpperCase():'☺';
+ try{
+  const r=indexedDB.open('seringaPerfilDB',1);
+  r.onsuccess=()=>{const db=r.result;if(!db.objectStoreNames.contains('perfil'))return;const q=db.transaction('perfil').objectStore('perfil').get('foto');q.onsuccess=()=>{if(q.result){const u=URL.createObjectURL(q.result);const im=document.getElementById('homePhoto');if(im){im.src=u;im.style.display='block';const i=document.getElementById('homeInitial');if(i)i.style.display='none'}}}};
+ }catch(e){}
+}
+function carregarLembreteHome(){
+ const h=localStorage.getItem('seringaHoraProxima');
+ const hist=JSON.parse(localStorage.getItem('seringaHistorico')||'[]');
+ const b=document.getElementById('nextReminder'),s=document.getElementById('nextReminderSub');
+ if(!b)return;
+ if(h){b.textContent='Próxima dose às '+h;s.textContent=hist.length?'Continue o seu acompanhamento.':'Configure o seu calendário.'}
+ else{b.textContent='Ver calendário';s.textContent='Organize os seus próximos eventos.'}
+}

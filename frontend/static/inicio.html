@@ -2,33 +2,44 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f3fbf9"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>Seringa Saúde</title>
-<link rel="stylesheet" href="theme.css?v=9"><link rel="stylesheet" href="seringa-modules.css?v=2"><script src="seringa-shield.js?v=1"></script>
-<script>if(localStorage.getItem('seringaStatus')!=='premium'){location.href='acesso.html'}</script>
+<meta name="theme-color" content="#f3fbf9"><meta name="description" content="Seringa Saúde — acompanhamento pessoal">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Seringa Saúde</title>
+<link rel="stylesheet" href="theme.css?v=9"><link rel="stylesheet" href="seringa-modules.css?v=4">
+<script src="seringa-shield.js?v=1"></script>
+<script>if(localStorage.getItem('seringaStatus')!=='premium')location.href='acesso.html'</script>
 </head>
 <body>
-<main class="ss-home">
-<section class="ss-home-hero">
+<main class="ss-dashboard">
+<header class="ss-dashboard-top">
 <div class="ss-home-brand"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Seu acompanhamento, num só lugar</small></div></div>
-<h1 style="font-size:28px;font-weight:950;margin:4px 0 6px">Bem-vindo 👋</h1><p style="font-size:13px;color:var(--ss-muted);line-height:1.5">Escolha um ambiente e entre diretamente nas ferramentas do seu acompanhamento.</p>
-<input class="ss-home-search" type="search" placeholder="Pesquisar módulo..." aria-label="Pesquisar módulo">
-<div class="ss-home-filters" aria-label="Filtros"><button class="ss-home-filter active" data-filter="all">Todos</button><button class="ss-home-filter" data-filter="tratamento">Tratamentos</button><button class="ss-home-filter" data-filter="acompanhamento">Acompanhamento</button><button class="ss-home-filter" data-filter="bemestar">Bem-estar</button></div>
+<a class="ss-profile-mini" href="perfil.html" aria-label="Abrir perfil"><span id="homeAvatar">☺</span><b>Perfil</b></a>
+</header>
+<section class="ss-welcome-card">
+<div class="ss-welcome-photo"><img id="homePhoto" alt="Foto do perfil"><span id="homeInitial">☺</span></div>
+<div><p class="ss-eyebrow">SEU ESPAÇO PESSOAL</p><h1 id="homeGreeting">Olá!</h1><p>Que bom ter você aqui. Vamos acompanhar tudo com tranquilidade.</p></div>
 </section>
-<section class="ss-home-section-title"><h2>Escolha o seu módulo</h2><p>Cada cartão é interativo e abre a sala correspondente.</p></section>
-<section class="ss-home-grid">
-<a class="ss-home-card" data-href="modulo-cronico.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">💉</div><h3>Doentes Crónicos</h3><p>Injeções, doses, locais, histórico e lembretes.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-fertilidade.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🧬</div><h3>Fertilidade e Hormonas</h3><p>Janela, doses, ciclo e conservação.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-biologicas.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🧫</div><h3>Terapias Biológicas</h3><p>Calendário, caneta, frio, reações e sintomas.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-diabetes.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">🩸</div><h3>Diabetes e MDI</h3><p>Insulina, rotação, glicemia e registos.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-intramuscular.html" data-category="tratamento" tabindex="0"><div><div class="ss-home-icon">💪</div><h3>Terapias Intramusculares</h3><p>Zonas, dor, manuseio e histórico.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-desmame.html" data-category="acompanhamento" tabindex="0"><div><div class="ss-home-icon">📉</div><h3>Desmame e Manutenção</h3><p>Plano, rebote, hábitos e relatório.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-estetica.html" data-category="bemestar" tabindex="0"><div><div class="ss-home-icon">✨</div><h3>Estética Avançada</h3><p>Sessões, simetria, evolução e reações.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-corporal.html" data-category="acompanhamento" tabindex="0"><div><div class="ss-home-icon">🖊️</div><h3>Modificação Corporal</h3><p>Registo, contagem, evolução e cuidados.</p></div><span class="ss-home-arrow">›</span></a>
-<a class="ss-home-card" data-href="modulo-fisioterapia.html" data-category="bemestar" tabindex="0"><div><div class="ss-home-icon">🪡</div><h3>Fisioterapia</h3><p>Sessão, dor, mobilidade e evolução.</p></div><span class="ss-home-arrow">›</span></a>
+<div class="ss-home-search-wrap"><span>⌕</span><input id="homeSearch" class="ss-home-search" type="search" placeholder="Pesquisar módulos..." aria-label="Pesquisar módulos"></div>
+<section class="ss-attention-card"><div class="ss-attention-icon">✓</div><div><b id="attentionTitle">Tudo atualizado</b><span id="attentionText">Os seus dados ficam guardados neste dispositivo.</span></div><span class="ss-attention-dot"></span></section>
+<section class="ss-section-head"><div><h2>Seus módulos</h2><p>Escolha uma área para continuar.</p></div><a href="calendario.html">Ver agenda ›</a></section>
+<section class="ss-home-grid ss-dashboard-grid">
+<a class="ss-home-card" data-href="modulo-cronico.html" data-category="tratamento"><div class="ss-home-icon">💉</div><h3>Doentes Crónicos</h3><p>Injeções, doses e histórico.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-fertilidade.html" data-category="tratamento"><div class="ss-home-icon">♀</div><h3>Fertilidade</h3><p>Janela, doses e ciclo.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-biologicas.html" data-category="tratamento"><div class="ss-home-icon">🧬</div><h3>Biológicas</h3><p>Caneta, frio e reações.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-diabetes.html" data-category="tratamento"><div class="ss-home-icon">🩸</div><h3>Diabetes</h3><p>Insulina, glicemia e rotação.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-intramuscular.html" data-category="tratamento"><div class="ss-home-icon">💪</div><h3>Intramuscular</h3><p>Zonas, dor e manuseio.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-desmame.html" data-category="acompanhamento"><div class="ss-home-icon">↘</div><h3>Desmame</h3><p>Plano, hábitos e evolução.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-estetica.html" data-category="bemestar"><div class="ss-home-icon">✦</div><h3>Estética</h3><p>Sessões e antes/depois.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-corporal.html" data-category="acompanhamento"><div class="ss-home-icon">◉</div><h3>Corporal</h3><p>Registo e evolução.</p><span class="ss-home-arrow">›</span></a>
+<a class="ss-home-card" data-href="modulo-fisioterapia.html" data-category="bemestar"><div class="ss-home-icon">🏃</div><h3>Fisioterapia</h3><p>Sessão, dor e mobilidade.</p><span class="ss-home-arrow">›</span></a>
+</section><section class="ss-next-card" onclick="location.href='calendario.html'">
+<div class="ss-next-icon">⏰</div><div><span>PRÓXIMO LEMBRETE</span><b id="nextReminder">Ver calendário</b><small id="nextReminderSub">Organize os seus próximos eventos.</small></div><strong>›</strong>
 </section>
-<div class="ss-home-cta" onclick="location.href='calendario.html'">📅 Abrir Calendário e Lembretes<small>Veja compromissos e acompanhe a sua rotina.</small></div>
-<div class="ss-brand no-print" style="margin-top:16px"><img src="logo-seringa-3d.svg?v=20260921" alt="Seringa Saúde"><div><strong>Seringa Saúde</strong><small>Privacidade · Offline-first · Mobile-first</small></div></div>
+<section class="ss-privacy-strip"><span>⌁</span><div><b>Funciona offline</b><small>Os seus dados ficam guardados no dispositivo.</small></div><span>↻</span><div><b>Sincronização preparada</b><small>As alterações podem ser enviadas quando voltar a ter internet.</small></div></section>
 </main>
-<nav class="ss-bottom-nav no-print" aria-label="Navegação principal"><a href="inicio.html" class="active"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="perfil.html"><span>♙</span>Perfil</a></nav>
-<script src="theme.js?v=9"></script><script src="seringa-home.js?v=1" defer></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
-<script src="seringa-modules.js?v=2" defer></script></body></html>
+<nav class="ss-bottom-nav no-print" aria-label="Navegação principal">
+<a href="inicio.html" class="active"><span>⌂</span>Início</a><a href="app.html"><span>✓</span>Registos</a><a href="calendario.html"><span>▣</span>Calendário</a><a href="perfil.html"><span>♙</span>Perfil</a>
+</nav>
+<script src="theme.js?v=9"></script><script src="seringa-home.js?v=2" defer></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}</script>
+<script src="seringa-modules.js?v=3" defer></script>
+</body></html>
