@@ -1,7 +1,7 @@
 /* Seringa — service worker: funciona sem internet e avisa quando há versão nova.
    Para publicar uma atualização: mudar VERSAO (e o conteúdo) e enviar para o GitHub. */
-const VERSAO = "seringa-2026-11-18-2";
-const ARQUIVOS = ["./", "index.html", "app.css", "app.js", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "../conteudo.js"];
+const VERSAO = "seringa-2026-11-18-3";
+const ARQUIVOS = ["./", "index.html", "app.css", "app.js", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png", "../conteudo.js"];
 self.addEventListener("install", e => e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS))));
 self.addEventListener("activate", e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("seringa-") && k !== VERSAO).map(k => caches.delete(k)))).then(() => self.clients.claim())));

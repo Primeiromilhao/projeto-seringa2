@@ -1,138 +1,158 @@
 {
-  "data": "2026-11-18T16:07:47.971Z",
+  "data": "2026-11-18T19:21:32.671Z",
   "resultados": [
     {
-      "nome": "01 Abrir aplicação",
+      "nome": "01 Abrir aplicação (boas-vindas)",
       "ok": true,
-      "ms": 482
+      "ms": 25638
     },
     {
-      "nome": "02 Configurar medicamento",
+      "nome": "02 Configurar medicamento (+ nome opcional)",
       "ok": true,
-      "ms": 454
+      "ms": 40495
     },
     {
-      "nome": "03+04 Registar aplicação em até 3 toques após configuração",
+      "nome": "03 Home: próxima, última, atalhos e navegação inferior",
       "ok": true,
-      "ms": 197
+      "ms": 367
     },
     {
-      "nome": "05 Próxima aplicação (intervalo indicado pela pessoa)",
+      "nome": "04 Registro em até 3 toques (botão + central)",
       "ok": true,
-      "ms": 13
+      "ms": 5953
     },
     {
-      "nome": "06 Rotação dos locais (mapa do corpo)",
+      "nome": "05 Registro: Outro local, lado, observação, data futura recusada",
       "ok": true,
-      "ms": 324
+      "ms": 4764
     },
     {
-      "nome": "07 Histórico (listar e apagar com confirmação)",
+      "nome": "06 Meu corpo: mapa com última e anteriores; histórico por local; sem recomendação",
       "ok": true,
-      "ms": 385
+      "ms": 1607
     },
     {
-      "nome": "08 Calendário",
+      "nome": "07 Sintomas + alerta fixo de sinal grave (bula do Mounjaro)",
       "ok": true,
-      "ms": 222
+      "ms": 6248
     },
     {
-      "nome": "09 Sintomas (registo simples)",
+      "nome": "08 Evolução: peso, variação, gráfico, medidas, sintomas — sem juízo de valor",
       "ok": true,
-      "ms": 221
+      "ms": 7089
     },
     {
-      "nome": "10 Alerta fixo de sinal grave (Mounjaro: texto da bula)",
+      "nome": "09 Minha jornada: linha do tempo, filtros, detalhe e apagar",
       "ok": true,
-      "ms": 148
+      "ms": 3493
     },
     {
-      "nome": "11+19 Efeitos e cuidados — Mounjaro",
+      "nome": "10 Lembretes: próximo lembrete, ativar/desativar, calendário .ics",
       "ok": true,
-      "ms": 93
+      "ms": 22911
     },
     {
-      "nome": "12 Relatório para a consulta",
+      "nome": "11 Calendário",
       "ok": true,
-      "ms": 358
+      "ms": 1007
     },
     {
-      "nome": "Lembrete .ics com alarme",
+      "nome": "12 Efeitos e cuidados (Mounjaro) e Guia SUS no Mais",
       "ok": true,
-      "ms": 479
+      "ms": 1166
     },
     {
-      "nome": "13 Exportação de dados",
+      "nome": "13 Meu relatório: opções, prévia e PDF (impressão)",
       "ok": true,
-      "ms": 338
+      "ms": 7038
     },
     {
-      "nome": "Armazenamento: IndexedDB criptografado, nada em claro no localStorage",
+      "nome": "14 Exportar dados (Mais)",
       "ok": true,
-      "ms": 10
+      "ms": 965
     },
     {
-      "nome": "14 Eliminação de todos os dados (+ restauro da cópia)",
+      "nome": "15 Armazenamento: IndexedDB criptografado, nada em claro no localStorage",
       "ok": true,
-      "ms": 1047
+      "ms": 332
     },
     {
-      "nome": "15 Offline (service worker)",
+      "nome": "16 Persistência: dados continuam depois de recarregar",
       "ok": true,
-      "ms": 1785
+      "ms": 2374
     },
     {
-      "nome": "16 Hash inválido não deixa o ecrã em branco",
+      "nome": "17 Apagar meus dados (+ restaurar cópia, recusar arquivo inválido)",
       "ok": true,
-      "ms": 609
+      "ms": 7771
     },
     {
-      "nome": "17 Mudança da data de referência",
+      "nome": "18 Hash inválido não deixa a tela em branco",
       "ok": true,
-      "ms": 988
+      "ms": 3724
     },
     {
-      "nome": "18 Medicamento diferente de Mounjaro (sem conteúdo do Mounjaro)",
+      "nome": "19 Mudança da data de referência",
       "ok": true,
-      "ms": 285
+      "ms": 2973
     },
     {
-      "nome": "Migração do formato antigo (localStorage → IndexedDB)",
+      "nome": "20 Medicamento diferente de Mounjaro (Insulina)",
       "ok": true,
-      "ms": 1000
+      "ms": 688
     },
     {
-      "nome": "Responsividade mobile (320/375/414/768) e letra ≥16 px",
+      "nome": "21 Offline (service worker) no navegador",
       "ok": true,
-      "ms": 1548
+      "ms": 5860
     },
     {
-      "nome": "Contraste AA (modo claro e escuro)",
+      "nome": "22 Migração do formato antigo (localStorage → IndexedDB)",
       "ok": true,
-      "ms": 1049
+      "ms": 16849
     },
     {
-      "nome": "Conteúdo proibido ausente (dose, diagnóstico, IA, imagem, código de ativação)",
+      "nome": "23 Responsividade (320/375/390/414/768) e letra ≥16 px",
       "ok": true,
-      "ms": 5
+      "ms": 3748
     },
     {
-      "nome": "Português do Brasil e textos (sem termos de Portugal visíveis)",
+      "nome": "24 Contraste AA (claro e escuro)",
       "ok": true,
-      "ms": 1693
+      "ms": 4305
     },
     {
-      "nome": "Site público: carrega, CSP sem violações, link para o app",
+      "nome": "25 Funções proibidas ausentes (dose, diagnóstico, triagem, IA, imagem, ativação, rastreadores)",
       "ok": true,
-      "ms": 499
+      "ms": 4110
     },
     {
-      "nome": "Versão anterior (/antigo/): página de transição, exportação, sem conversor de dose publicado",
+      "nome": "26 Português do Brasil e textos sem valores quebrados",
       "ok": true,
-      "ms": 976
+      "ms": 3844
     },
     {
-      "nome": "20 Consola sem erros",
+      "nome": "27 Site: 3 botões, APK real (não HTML, não redirect), SHA-256",
+      "ok": true,
+      "ms": 7816
+    },
+    {
+      "nome": "28 APK contém exatamente a app de site/app (sem lógica duplicada)",
+      "ok": true,
+      "ms": 54
+    },
+    {
+      "nome": "29 /antigo/: página de transição e exportação dos dados antigos",
+      "ok": true,
+      "ms": 1365
+    },
+    {
+      "nome": "30 iPhone (WebKit/Safari, perfil iPhone 13): PWA, instalação, fluxo e offline",
+      "ok": true,
+      "ms": 34617
+    },
+    {
+      "nome": "31 Consola sem erros (Chromium)",
       "ok": true,
       "ms": 0
     }

@@ -20,4 +20,9 @@
       (a.fonte ? '<p class="fonte">Fonte: ' + fonte([a.fonte]) + "</p>" : "") + "</div>";
   }).join("");
   document.getElementById("versao").textContent = data(C.versao);
+  // tamanho real do APK publicado (pedido HEAD ao próprio site; sem serviços externos)
+  var t = document.getElementById("apk-tamanho");
+  if (t && window.fetch) fetch("downloads/Seringa.apk", { method: "HEAD", cache: "no-store" }).then(function (r) {
+    var n = +r.headers.get("content-length"); if (r.ok && n) t.textContent = "app Android, " + (n / 1024).toFixed(0) + " KB";
+  }).catch(function () { /* mantém o texto */ });
 })();

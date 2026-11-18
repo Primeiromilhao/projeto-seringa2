@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema escuro: o WebView passa a informar prefers-color-scheme: dark, e a app usa o seu modo escuro. -->
+    <style name="Tema" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">#111827</item>
+        <item name="android:colorPrimaryDark">#111827</item>
+        <item name="android:colorAccent">#B69DFB</item>
+        <item name="android:statusBarColor">#111827</item>
+        <item name="android:navigationBarColor">#1F2937</item>
+        <item name="android:windowBackground">@color/fundo</item>
+    </style>
+    <color name="fundo">#111827</color>
+    <color name="marca">#111827</color>
+</resources>

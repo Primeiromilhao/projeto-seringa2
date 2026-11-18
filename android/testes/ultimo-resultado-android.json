@@ -1,0 +1,85 @@
+{
+  "data": "2026-11-18T19:59:37.210Z",
+  "android": "11",
+  "api": 30,
+  "webview": "com.android.webview, 83.0.4103.120",
+  "sistema": "userdebug",
+  "resultados": [
+    {
+      "n": "A1 Instalar o APK de publicação (Seringa.apk)",
+      "ok": true
+    },
+    {
+      "n": "A2 Abre como aplicação própria (não o Chrome)",
+      "ok": true
+    },
+    {
+      "n": "A3 Interface do Seringa aparece",
+      "ok": true
+    },
+    {
+      "n": "A4 Toques reais: «Começar» abre a configuração",
+      "ok": true
+    },
+    {
+      "n": "A5 Sem falhas nativas (logcat)",
+      "ok": true
+    },
+    {
+      "n": "B1 Ligação ao WebView do app e ambiente seguro",
+      "ok": true
+    },
+    {
+      "n": "B2 Configurar e registrar aplicação (botão +)",
+      "ok": true
+    },
+    {
+      "n": "B3 Lembrete: alarme agendado e notificação mostrada na hora indicada",
+      "ok": true
+    },
+    {
+      "n": "B4 Calendário, Minha jornada (histórico) e Meu corpo",
+      "ok": true
+    },
+    {
+      "n": "B5 Sintomas e alerta fixo",
+      "ok": true
+    },
+    {
+      "n": "B6 Evolução: peso e gráfico",
+      "ok": true
+    },
+    {
+      "n": "B7 Relatório: «Gerar PDF» abre o serviço de impressão do Android",
+      "ok": true
+    },
+    {
+      "n": "B8 Exportar dados → Downloads/Seringa",
+      "ok": true
+    },
+    {
+      "n": "B9 Persistência: fechar à força, reabrir e atualizar o APK por cima",
+      "ok": true
+    },
+    {
+      "n": "B10 Offline: modo avião, reabrir e registrar",
+      "ok": true
+    },
+    {
+      "n": "B11 Botão voltar do Android volta à Home antes de sair",
+      "ok": true
+    },
+    {
+      "n": "B12 Modo escuro do sistema chega ao app",
+      "ok": true
+    },
+    {
+      "n": "B13 Apagar meus dados (inclui cancelar o lembrete)",
+      "ok": true
+    },
+    {
+      "n": "B14 Sem erros JavaScript no WebView",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Tema" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#F6F4FB</item>
+        <item name="android:colorPrimaryDark">#F6F4FB</item>
+        <item name="android:colorAccent">#6D28D9</item>
+        <item name="android:statusBarColor">#F6F4FB</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">@color/fundo</item>
+    </style>
+    <color name="fundo">#F6F4FB</color>
+    <color name="marca">#F6F4FB</color>
+</resources>

@@ -5,61 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#0b5c6b">
-<title>Seringa — informação e organização para quem usa canetas injetáveis</title>
-<meta name="description" content="Seringa: app gratuito para organizar o tratamento com canetas injetáveis (como o Mounjaro), lidar com os efeitos com informação de fonte oficial e chegar à consulta preparado.">
-<meta property="og:title" content="Seringa — seu tratamento organizado">
-<meta property="og:description" content="Registre aplicações, entenda os efeitos e leve tudo à consulta. Informação de fonte oficial.">
+<meta name="theme-color" content="#6d28d9">
+<title>Seringa — organize o seu tratamento com mais simplicidade</title>
+<meta name="description" content="Seringa: app gratuito para quem usa medicamentos injetáveis. Registre aplicações, receba lembretes, veja o mapa do corpo, acompanhe a sua jornada e leve um relatório à consulta. Android, iPhone e navegador.">
+<meta property="og:title" content="Seringa — organize o seu tratamento com mais simplicidade">
+<meta property="og:description" content="Registre aplicações, receba lembretes e leve tudo organizado à consulta. Dados só no seu celular.">
 <meta property="og:image" content="app/icon-512.png">
 <link rel="icon" href="app/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="app/apple-touch-icon.png">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <header class="topo">
-  <a class="marca" href="#inicio"><img src="app/icon.svg" alt="" width="30" height="30"> Seringa</a>
-  <nav><a href="#efeitos">Efeitos</a><a href="#sus">SUS</a><a href="#avisos">Avisos</a><a class="cta-mini" href="#instalar">Instalar</a></nav>
+  <a class="marca" href="#inicio"><img src="app/icon.svg" alt="" width="34" height="34"> Seringa</a>
+  <nav aria-label="Secções"><a href="#o-que-e">O que é</a><a href="#como-funciona">Como funciona</a><a href="#efeitos">Efeitos</a><a class="cta-mini" href="#baixar">Baixar</a></nav>
 </header>
 
 <section id="inicio" class="hero">
   <div class="hero-txt">
-    <p class="selo">Gratuito · funciona sem internet · dados só no seu celular</p>
-    <h1>A caneta muda o corpo, o apetite e a rotina. <span>Você não precisa passar por isso sem informação.</span></h1>
-    <p class="lead">O Seringa ajuda quem usa canetas injetáveis — como o Mounjaro — a organizar o tratamento, entender os efeitos com base em fontes oficiais e chegar à consulta com tudo anotado.</p>
-    <div class="botoes"><a class="btn" href="app/">Abrir o app</a><a class="btn sec" href="#instalar">Como instalar</a></div>
+    <p class="selo">Grátis · funciona sem internet · dados só no seu celular</p>
+    <h1 class="nome">SERINGA</h1>
+    <p class="slogan">Organize o seu tratamento com mais simplicidade.</p>
+    <p class="lead">Para quem usa medicamentos injetáveis — canetas como o Mounjaro, insulina e outros. Registre cada aplicação em segundos, receba o lembrete da próxima e chegue à consulta com tudo organizado.</p>
+    <div class="botoes tres-botoes" id="escolher">
+      <a class="btn" id="btn-navegador" href="app/">Usar no navegador</a>
+      <a class="btn" id="btn-android" href="downloads/Seringa.apk" download="Seringa.apk" type="application/vnd.android.package-archive">Baixar para Android</a>
+      <a class="btn sec" id="btn-iphone" href="#iphone">Instalar no iPhone</a>
+    </div>
+    <p class="fonte">Android: arquivo Seringa.apk (<span id="apk-tamanho">app Android</span>). Cada forma de uso guarda os seus próprios dados no aparelho — não há sincronização automática.</p>
   </div>
   <div class="hero-tel" aria-hidden="true">
-    <div class="tel"><div class="tel-topo">Seringa</div>
-      <div class="tel-cartao"><small>Próxima aplicação</small><b>Em 3 dias</b><small>sex, 21/11 às 09:00</small></div>
-      <div class="tel-btn">➕ Registrar aplicação</div>
-      <div class="tel-cartao"><small>Última aplicação</small><b class="m">Abdômen — lado esquerdo</b><small>Na próxima, varie o local</small></div>
-      <div class="tel-linha"><span>📝 Como estou</span><span>💡 Efeitos</span></div>
+    <div class="tel">
+      <div class="tel-logo"><img src="app/icon.svg" alt="" width="22" height="22"> Seringa</div>
+      <div class="tel-ola">Olá!</div>
+      <div class="tel-principal"><small>Próxima aplicação</small><b>Qui, 21 de nov • 20:00</b><small>Faltam 2 dias</small></div>
+      <div class="tel-cartao"><small>Última aplicação</small><b>Abdômen esquerdo</b></div>
+      <div class="tel-btn">Registrar aplicação</div>
+      <div class="tel-grade"><span>Meu corpo</span><span>Minha jornada</span><span>Peso e medidas</span><span>Sintomas</span></div>
     </div>
   </div>
 </section>
 
-<section class="faixa-visao">
-  <div class="largura">
-    <h2>Nossa visão</h2>
-    <p>As canetas estão chegando a cada vez mais pessoas — os preços caíram e o SUS anunciou que vai oferecê-las. Com elas surgem necessidades que muita gente desconhece: o enjoo das primeiras semanas, a alimentação que muda, o local da aplicação, os sinais que pedem atendimento.</p>
-    <p><strong>O Seringa existe para que a informação certa chegue à vida das pessoas</strong> — e para que cada um tenha uma rotina de tratamento mais segura, mais organizada e com mais conhecimento.</p>
-    <p class="nota">Nós não prescrevemos nada. O Seringa organiza, lembra e informa — o médico decide.</p>
+<section id="o-que-e" class="largura">
+  <h2>O que é o Seringa?</h2>
+  <p class="sub">Um aplicativo que organiza a sua jornada de aplicações. Ele responde, num olhar, às perguntas do dia a dia: <b>quando é a próxima?</b> <b>Onde apliquei da última vez?</b> <b>Como tenho estado?</b> <b>O que levo à consulta?</b></p>
+  <p class="nota-marca">O Seringa organiza, lembra e informa — <b>quem decide é o seu médico</b>. Ele não calcula nem orienta doses e não faz diagnóstico.</p>
+</section>
+
+<section id="como-funciona" class="faixa-clara"><div class="largura">
+  <h2>Como funciona?</h2>
+  <ol class="passos">
+    <li><span class="num">1</span><div><h3>Configure uma vez</h3><p>O nome do medicamento, a frequência e a data da próxima aplicação — conforme o seu médico prescreveu.</p></div></li>
+    <li><span class="num">2</span><div><h3>Registre em segundos</h3><p>Toque no <b>+</b>, escolha o local e o lado, salve. A próxima data atualiza sozinha.</p></div></li>
+    <li><span class="num">3</span><div><h3>Acompanhe a jornada</h3><p>Mapa do corpo com os locais registrados, linha do tempo, sintomas, peso e medidas.</p></div></li>
+    <li><span class="num">4</span><div><h3>Leve à consulta</h3><p>Gere um PDF com o resumo dos seus registros para mostrar ao médico.</p></div></li>
+  </ol>
+</div></section>
+
+<section id="porque" class="largura">
+  <h2>Por que usar?</h2>
+  <div class="grelha">
+    <div class="card"><h3>Nunca fique na dúvida</h3><p>Se já aplicou, quando foi e quando é a próxima — sempre no topo do app, com lembrete.</p></div>
+    <div class="card"><h3>Organize os locais</h3><p>O mapa do corpo mostra onde você registrou cada aplicação, para organizar a rotação que o seu médico e a bula orientam.</p></div>
+    <div class="card"><h3>Veja a sua evolução</h3><p>Peso, medidas e sintomas em gráficos simples — só os números que você registrou.</p></div>
+    <div class="card"><h3>Consulta mais produtiva</h3><p>Um relatório organizado e as suas dúvidas anotadas, prontos para mostrar.</p></div>
+    <div class="card"><h3>Privacidade de verdade</h3><p>Os dados ficam só no seu aparelho, com criptografia. Sem conta, sem publicidade, sem venda de dados.</p></div>
+    <div class="card"><h3>Informação oficial</h3><p>Efeitos e cuidados com base na bula e em fontes oficiais, com a fonte sempre visível.</p></div>
   </div>
 </section>
 
-<section class="largura">
-  <h2>O que o app faz por você</h2>
-  <div class="grelha">
-    <div class="card"><span>💉</span><h3>Registro em segundos</h3><p>Toque no local do corpo e confirme. Nunca mais fique na dúvida se já aplicou.</p></div>
-    <div class="card"><span>🗺️</span><h3>Mapa do corpo</h3><p>Mostra onde e quando aplicou em cada local, para variar o local como a bula orienta.</p></div>
-    <div class="card"><span>⏰</span><h3>Lembrete e calendário</h3><p>Conforme o que o seu médico prescreveu: um calendário no app e um lembrete com alarme no calendário do celular.</p></div>
-    <div class="card"><span>📝</span><h3>Como estou</h3><p>Anote enjoo, intestino, cansaço… Se marcar um sinal de alerta, o app avisa na hora.</p></div>
-    <div class="card"><span>💡</span><h3>Efeitos e cuidados</h3><p>O que pode acontecer e quando procurar atendimento, segundo a bula — com fonte.</p></div>
-    <div class="card"><span>📄</span><h3>Relatório da consulta</h3><p>Aplicações, sintomas, peso e suas dúvidas, prontos para mostrar ao médico.</p></div>
+<section id="baixar" class="faixa-marca"><div class="largura">
+  <h2>Baixe o Seringa (grátis)</h2>
+  <p class="sub">É o mesmo app em todos: registro, lembretes, calendário, mapa do corpo, jornada, evolução, sintomas, efeitos e cuidados, relatório e privacidade.</p>
+  <div class="grelha tres">
+    <div class="card" id="android"><h3>Android</h3><ol>
+      <li>Toque em <b>Baixar para Android</b> e abra o arquivo <b>Seringa.apk</b>.</li>
+      <li>Se o celular pedir, permita <b>instalar apps desta fonte</b> (o Seringa ainda não está na Play Store).</li>
+      <li>Toque em <b>Instalar</b>. O Seringa aparece entre os seus apps.</li></ol>
+      <p class="fonte">Android 7 ou mais recente. O app não tem acesso à internet: os seus dados não saem do celular. Ele mostra uma notificação na hora da próxima aplicação que você indicou.</p>
+      <a class="btn" href="downloads/Seringa.apk" download="Seringa.apk" type="application/vnd.android.package-archive">Baixar para Android</a>
+      <p class="fonte">Verificação do arquivo (SHA-256): <a href="downloads/Seringa.apk.sha256">Seringa.apk.sha256</a></p></div>
+    <div class="card" id="iphone"><h3>iPhone</h3><ol>
+      <li>Abra <a href="app/">o app</a> no <b>Safari</b>.</li>
+      <li>Toque em <b>Compartilhar</b> (quadrado com seta para cima).</li>
+      <li>Escolha <b>Adicionar à Tela de Início</b> e toque em <b>Adicionar</b>.</li>
+      <li>Abra o Seringa pelo ícone: ele abre em tela cheia, como um app, e funciona sem internet.</li></ol>
+      <p class="fonte">No iPhone o Seringa é instalado pelo Safari (a Apple não permite instalar apps por arquivo fora da App Store). O app instalado guarda os dados separados da aba do Safari. Para lembretes, use «Adicionar ao calendário» dentro do app.</p>
+      <a class="btn" href="app/">Abrir no Safari</a></div>
+    <div class="card" id="navegador"><h3>Navegador</h3><p>Abra <a href="app/">o app no navegador</a> de qualquer celular ou computador. Depois de aberto uma vez, funciona sem internet.</p>
+      <p class="fonte">No Chrome do Android também pode usar «Instalar app» no menu ⋮.</p>
+      <a class="btn" href="app/">Usar no navegador</a></div>
   </div>
-</section>
+  <div class="card"><h3>Atualizações e os seus dados</h3><p>No navegador e no iPhone, quando publicamos uma melhoria, o app mostra <b>«Nova versão disponível»</b>; toque em <b>Atualizar</b>. No Android, baixe o novo Seringa.apk e instale por cima: os registros continuam lá. Os dados de cada forma de uso ficam só naquele aparelho; para passar de um para outro, use <b>Exportar dados</b> e <b>Restaurar uma cópia</b> em «Mais».</p></div>
+</div></section>
 
 <section id="efeitos" class="largura">
-  <h2>Mounjaro: como o corpo reage e como lidar</h2>
+  <h2>Mounjaro: efeitos e quando procurar atendimento</h2>
   <p class="sub">A tirzepatida deixa o estômago esvaziar mais devagar e reduz o apetite. Por isso os efeitos mais comuns são digestivos — mais fortes no início e quando o médico aumenta a dose, e costumam diminuir com o tempo.</p>
   <div class="alerta" id="alertas"></div>
   <div class="grelha" id="lista-efeitos"></div>
@@ -74,26 +115,13 @@
 
 <section id="avisos" class="largura">
   <h2>Avisos e novidades</h2>
-  <p class="sub">Alertas importantes e melhorias do app são publicados aqui.</p>
   <div id="lista-avisos"></div>
 </section>
 
-<section id="instalar" class="faixa-clara"><div class="largura">
-  <h2>Instalar o app (grátis)</h2>
-  <p class="sub">O Seringa ainda não está nas lojas. Ele é instalado a partir deste site, em poucos toques, e se atualiza sozinho.</p>
-  <div class="grelha tres">
-    <div class="card"><h3>📱 Android (Chrome)</h3><ol><li>Abra <a href="app/">o app</a>.</li><li>Toque nos <b>⋮</b> e em <b>Instalar app</b> (ou <b>Adicionar à tela inicial</b>).</li><li>Pronto: o ícone do Seringa aparece no celular.</li></ol></div>
-    <div class="card"><h3>🍎 iPhone (Safari)</h3><ol><li>Abra <a href="app/">o app</a> no Safari.</li><li>Toque em <b>Compartilhar</b> (quadrado com seta).</li><li>Escolha <b>Adicionar à Tela de Início</b>.</li></ol></div>
-    <div class="card"><h3>🔄 Atualizações</h3><p>Quando publicamos uma melhoria, o app mostra <b>«Nova versão disponível»</b>. Toque em <b>Atualizar</b> — seus registros continuam lá.</p></div>
-  </div>
-  <a class="btn" href="app/">Abrir o app agora</a>
-</div></section>
-
 <section id="privacidade" class="largura">
   <h2>Privacidade</h2>
-  <p>Seus registros (medicamento, aplicações, sintomas, peso e dúvidas) ficam <b>apenas no seu celular</b>, salvos com criptografia. O Seringa não tem servidor de dados: não pedimos nome, CPF, endereço nem e-mail, não enviamos seus dados de saúde para lugar nenhum, não vendemos dados e não usamos publicidade nem rastreadores.</p>
-  <p>Os dados servem só para organizar o seu tratamento: lembrar, mostrar o histórico e montar o relatório para a consulta. No próprio app você pode baixar uma cópia, restaurá-la em outro celular ou apagar tudo a qualquer momento.</p>
-  <p class="fonte">Importante: quem usar o seu celular desbloqueado consegue abrir o app. Use bloqueio de tela. Se limpar os dados do navegador sem ter uma cópia, os registros são perdidos.</p>
+  <p>Os seus registros (medicamento, aplicações, sintomas, peso, medidas e dúvidas) ficam <b>apenas no seu aparelho</b>, salvos com criptografia. O Seringa não tem servidor de dados: não pedimos CPF, endereço nem e-mail, não enviamos os seus dados de saúde para lugar nenhum, não vendemos dados e não usamos publicidade nem rastreadores.</p>
+  <p class="fonte">Quem usar o seu celular desbloqueado consegue abrir o app: use bloqueio de tela. Se apagar o app ou limpar os dados do navegador sem ter uma cópia, os registros são perdidos.</p>
 </section>
 
 <footer>

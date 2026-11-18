@@ -14,3 +14,11 @@ PROJETO_SERINGA_AI_v*_release_*.zip
 frontend/tsconfig.tsbuildinfo
 scripts/*.log
 Backups/
+
+# Android (compilação local; a chave de assinatura fica FORA do repositório)
+android/build/
+android_build*.log
+*.jks
+*.keystore
+android/*.log
+android/final.txt
