@@ -1,8 +1,7 @@
 name: Deploy Seringa static site to Pages
 
+# Desativado em 18/11/2026: a publicacao unica e o deploy-pages.yml
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:

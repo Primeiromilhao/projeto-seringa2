@@ -1,0 +1,17 @@
+{
+  "name": "Seringa — seu tratamento organizado",
+  "short_name": "Seringa",
+  "description": "Registre aplicações, lembre-se da próxima, anote sintomas e leve tudo à consulta. Informação de fonte oficial.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f8f9",
+  "theme_color": "#0b5c6b",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

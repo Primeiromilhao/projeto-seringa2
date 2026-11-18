@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b5c6b">
+<title>Seringa — seu tratamento organizado</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topo">
+  <div class="marca"><img src="icon.svg" alt="" width="28" height="28"> Seringa</div>
+  <button class="link" id="btn-ajuda" aria-label="Ajuda e aviso">ⓘ</button>
+</header>
+<div id="atualizar" class="faixa" hidden>Nova versão disponível. <button id="btn-atualizar">Atualizar</button></div>
+<main id="ecra" tabindex="-1"></main>
+<nav class="abas" aria-label="Navegação">
+  <button data-ecra="hoje" class="ativa"><span>🏠</span>Hoje</button>
+  <button data-ecra="registrar"><span>➕</span>Registrar</button>
+  <button data-ecra="sintomas"><span>📝</span>Sintomas</button>
+  <button data-ecra="efeitos"><span>💡</span>Efeitos</button>
+  <button data-ecra="mais"><span>☰</span>Mais</button>
+</nav>
+<div id="aviso-toast" class="toast" role="status" aria-live="polite"></div>
+<script src="../conteudo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

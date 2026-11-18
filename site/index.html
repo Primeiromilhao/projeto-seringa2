@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b5c6b">
+<title>Seringa — informação e organização para quem usa canetas injetáveis</title>
+<meta name="description" content="Seringa: app gratuito para organizar o tratamento com canetas injetáveis (como o Mounjaro), lidar com os efeitos com informação de fonte oficial e chegar à consulta preparado.">
+<meta property="og:title" content="Seringa — seu tratamento organizado">
+<meta property="og:description" content="Registre aplicações, entenda os efeitos e leve tudo à consulta. Informação de fonte oficial.">
+<meta property="og:image" content="app/icon-512.png">
+<link rel="icon" href="app/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topo">
+  <a class="marca" href="#inicio"><img src="app/icon.svg" alt="" width="30" height="30"> Seringa</a>
+  <nav><a href="#efeitos">Efeitos</a><a href="#sus">SUS</a><a href="#avisos">Avisos</a><a class="cta-mini" href="#instalar">Instalar</a></nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-txt">
+    <p class="selo">Gratuito · funciona sem internet · dados só no seu celular</p>
+    <h1>A caneta muda o corpo, o apetite e a rotina. <span>Você não precisa passar por isso sem informação.</span></h1>
+    <p class="lead">O Seringa ajuda quem usa canetas injetáveis — como o Mounjaro — a organizar o tratamento, entender os efeitos com base em fontes oficiais e chegar à consulta com tudo anotado.</p>
+    <div class="botoes"><a class="btn" href="app/">Abrir o app</a><a class="btn sec" href="#instalar">Como instalar</a></div>
+  </div>
+  <div class="hero-tel" aria-hidden="true">
+    <div class="tel"><div class="tel-topo">Seringa</div>
+      <div class="tel-cartao"><small>Próxima aplicação</small><b>Em 3 dias</b><small>sex, 21/11 às 09:00</small></div>
+      <div class="tel-btn">➕ Registrar aplicação</div>
+      <div class="tel-cartao"><small>Última aplicação</small><b class="m">Abdômen — lado esquerdo</b><small>Na próxima, varie o local</small></div>
+      <div class="tel-linha"><span>📝 Como estou</span><span>💡 Efeitos</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa-visao">
+  <div class="largura">
+    <h2>Nossa visão</h2>
+    <p>As canetas estão chegando a cada vez mais pessoas — os preços caíram e o SUS anunciou que vai oferecê-las. Com elas surgem necessidades que muita gente desconhece: o enjoo das primeiras semanas, a alimentação que muda, o local da aplicação, os sinais que pedem atendimento.</p>
+    <p><strong>O Seringa existe para que a informação certa chegue à vida das pessoas</strong> — e para que cada um tenha uma rotina de tratamento mais segura, mais organizada e com mais conhecimento.</p>
+    <p class="nota">Nós não prescrevemos nada. O Seringa organiza, lembra e informa — o médico decide.</p>
+  </div>
+</section>
+
+<section class="largura">
+  <h2>O que o app faz por você</h2>
+  <div class="grelha">
+    <div class="card"><span>💉</span><h3>Registro em segundos</h3><p>Toque no local do corpo e confirme. Nunca mais fique na dúvida se já aplicou.</p></div>
+    <div class="card"><span>🗺️</span><h3>Mapa do corpo</h3><p>Mostra onde aplicou da última vez, para variar o local como a bula orienta.</p></div>
+    <div class="card"><span>⏰</span><h3>Lembrete da próxima</h3><p>Conforme o que o seu médico prescreveu — direto no calendário do celular.</p></div>
+    <div class="card"><span>📝</span><h3>Como estou</h3><p>Anote enjoo, intestino, cansaço… Se marcar um sinal de alerta, o app avisa na hora.</p></div>
+    <div class="card"><span>💡</span><h3>Efeitos e cuidados</h3><p>O que pode acontecer, o que pode ajudar e quando procurar atendimento — com fonte.</p></div>
+    <div class="card"><span>📄</span><h3>Relatório da consulta</h3><p>Aplicações, sintomas, peso e suas dúvidas, prontos para mostrar ao médico.</p></div>
+  </div>
+</section>
+
+<section id="efeitos" class="largura">
+  <h2>Mounjaro: como o corpo reage e como lidar</h2>
+  <p class="sub">A tirzepatida deixa o estômago esvaziar mais devagar e reduz o apetite. Por isso os efeitos mais comuns são digestivos — mais fortes no início e quando o médico aumenta a dose, e costumam diminuir com o tempo.</p>
+  <div class="alerta" id="alertas"></div>
+  <div class="grelha" id="lista-efeitos"></div>
+  <p class="fonte" id="fontes-efeitos"></p>
+</section>
+
+<section id="sus" class="faixa-clara"><div class="largura">
+  <h2>Canetas no SUS: o que se sabe</h2>
+  <div id="lista-sus"></div>
+  <p class="fonte" id="fonte-sus"></p>
+</div></section>
+
+<section id="avisos" class="largura">
+  <h2>Avisos e novidades</h2>
+  <p class="sub">Alertas importantes e melhorias do app são publicados aqui.</p>
+  <div id="lista-avisos"></div>
+</section>
+
+<section id="instalar" class="faixa-clara"><div class="largura">
+  <h2>Instalar o app (grátis)</h2>
+  <p class="sub">O Seringa ainda não está nas lojas. Ele é instalado a partir deste site, em poucos toques, e se atualiza sozinho.</p>
+  <div class="grelha tres">
+    <div class="card"><h3>📱 Android (Chrome)</h3><ol><li>Abra <a href="app/">o app</a>.</li><li>Toque nos <b>⋮</b> e em <b>Instalar app</b> (ou <b>Adicionar à tela inicial</b>).</li><li>Pronto: o ícone do Seringa aparece no celular.</li></ol></div>
+    <div class="card"><h3>🍎 iPhone (Safari)</h3><ol><li>Abra <a href="app/">o app</a> no Safari.</li><li>Toque em <b>Compartilhar</b> (quadrado com seta).</li><li>Escolha <b>Adicionar à Tela de Início</b>.</li></ol></div>
+    <div class="card"><h3>🔄 Atualizações</h3><p>Quando publicamos uma melhoria, o app mostra <b>«Nova versão disponível»</b>. Toque em <b>Atualizar</b> — seus registros continuam lá.</p></div>
+  </div>
+  <a class="btn" href="app/">Abrir o app agora</a>
+</div></section>
+
+<section id="privacidade" class="largura">
+  <h2>Privacidade</h2>
+  <p>Seus registros ficam <b>apenas no seu celular</b>. Não pedimos CPF nem morada, não enviamos seus dados de saúde para servidores, não vendemos dados e não usamos publicidade. Você pode baixar uma cópia ou apagar tudo a qualquer momento, no próprio app.</p>
+</section>
+
+<footer>
+  <div class="largura">
+    <p><b>Aviso importante:</b> o Seringa é uma ferramenta de organização e informação. Não calcula nem orienta doses, não faz diagnóstico e não substitui o médico. Use qualquer medicamento somente com prescrição e acompanhamento profissional. Em urgência, ligue <b>192 (SAMU)</b>.</p>
+    <p class="fonte">Conteúdo de saúde baseado na bula do medicamento (Anvisa) e em fontes oficiais, com data de revisão. Versão do conteúdo: <span id="versao"></span>.</p>
+  </div>
+</footer>
+<script src="conteudo.js"></script>
+<script>
+(function(){
+  var C = window.SERINGA_CONTEUDO; if(!C) return;
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]});}
+  function fonte(ks){return ks.map(function(k){var f=C.fontes[k];return f?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">'+esc(f.nome)+'</a>':"";}).join(" · ");}
+  document.getElementById("alertas").innerHTML='<strong>⚠ Procure atendimento se:</strong><ul>'+C.alertas.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+'</ul>';
+  document.getElementById("lista-efeitos").innerHTML=C.efeitos.map(function(e){
+    return '<div class="card"><h3>'+e.icone+' '+esc(e.titulo)+'</h3><p>'+esc(e.oque)+'</p>'+
+      (e.ajuda.length?'<p><b>O que pode ajudar:</b></p><ul>'+e.ajuda.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+'</ul>':"")+
+      (e.alerta?'<p class="ponto">⚠ '+esc(e.alerta)+'</p>':"")+'</div>';}).join("");
+  document.getElementById("fontes-efeitos").innerHTML="Fontes: "+fonte(["bula","lilly"]);
+  document.getElementById("lista-sus").innerHTML=C.sus.map(function(p){return "<p>"+esc(p)+"</p>";}).join("");
+  document.getElementById("fonte-sus").innerHTML="Fonte: "+fonte(["ms"]);
+  document.getElementById("lista-avisos").innerHTML=C.avisos.slice().sort(function(a,b){return b.data.localeCompare(a.data);}).map(function(a){
+    return '<div class="aviso"><time>'+new Date(a.data+"T12:00").toLocaleDateString("pt-BR")+'</time><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.texto)+'</p>'+(a.fonte?'<p class="fonte">Fonte: '+fonte([a.fonte])+'</p>':"")+'</div>';}).join("");
+  document.getElementById("versao").textContent=new Date(C.versao+"T12:00").toLocaleDateString("pt-BR");
+})();
+</script>
+</body>
+</html>
