@@ -1,5 +1,9 @@
-﻿name: Deploy Seringa to GitHub Pages
+name: Deploy Seringa to GitHub Pages
 
+# Publicação ÚNICA do site + app do Seringa (18/11/2026).
+#   /          -> site novo (pasta site/)
+#   /app/      -> app PWA (instala a partir do site, atualiza sozinho)
+#   /antigo/   -> versão anterior (frontend/static), guardada para quem ainda a usa
 on:
   push:
     branches: [main]
@@ -20,19 +24,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Prepare static site
+      - name: Prepare site
         shell: bash
         run: |
-          rm -rf frontend/out
-          mkdir -p frontend/out
-          cp -R frontend/static/. frontend/out/
-          echo static-site-ready
+          rm -rf _publicar
+          mkdir -p _publicar/antigo
+          cp -R site/. _publicar/
+          cp -R frontend/static/. _publicar/antigo/
+          touch _publicar/.nojekyll
+          echo site-pronto
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/out
+          path: _publicar
 
   deploy:
     environment:
@@ -44,4 +50,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
