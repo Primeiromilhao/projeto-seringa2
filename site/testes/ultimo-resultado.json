@@ -1,0 +1,140 @@
+{
+  "data": "2026-11-18T16:07:47.971Z",
+  "resultados": [
+    {
+      "nome": "01 Abrir aplicação",
+      "ok": true,
+      "ms": 482
+    },
+    {
+      "nome": "02 Configurar medicamento",
+      "ok": true,
+      "ms": 454
+    },
+    {
+      "nome": "03+04 Registar aplicação em até 3 toques após configuração",
+      "ok": true,
+      "ms": 197
+    },
+    {
+      "nome": "05 Próxima aplicação (intervalo indicado pela pessoa)",
+      "ok": true,
+      "ms": 13
+    },
+    {
+      "nome": "06 Rotação dos locais (mapa do corpo)",
+      "ok": true,
+      "ms": 324
+    },
+    {
+      "nome": "07 Histórico (listar e apagar com confirmação)",
+      "ok": true,
+      "ms": 385
+    },
+    {
+      "nome": "08 Calendário",
+      "ok": true,
+      "ms": 222
+    },
+    {
+      "nome": "09 Sintomas (registo simples)",
+      "ok": true,
+      "ms": 221
+    },
+    {
+      "nome": "10 Alerta fixo de sinal grave (Mounjaro: texto da bula)",
+      "ok": true,
+      "ms": 148
+    },
+    {
+      "nome": "11+19 Efeitos e cuidados — Mounjaro",
+      "ok": true,
+      "ms": 93
+    },
+    {
+      "nome": "12 Relatório para a consulta",
+      "ok": true,
+      "ms": 358
+    },
+    {
+      "nome": "Lembrete .ics com alarme",
+      "ok": true,
+      "ms": 479
+    },
+    {
+      "nome": "13 Exportação de dados",
+      "ok": true,
+      "ms": 338
+    },
+    {
+      "nome": "Armazenamento: IndexedDB criptografado, nada em claro no localStorage",
+      "ok": true,
+      "ms": 10
+    },
+    {
+      "nome": "14 Eliminação de todos os dados (+ restauro da cópia)",
+      "ok": true,
+      "ms": 1047
+    },
+    {
+      "nome": "15 Offline (service worker)",
+      "ok": true,
+      "ms": 1785
+    },
+    {
+      "nome": "16 Hash inválido não deixa o ecrã em branco",
+      "ok": true,
+      "ms": 609
+    },
+    {
+      "nome": "17 Mudança da data de referência",
+      "ok": true,
+      "ms": 988
+    },
+    {
+      "nome": "18 Medicamento diferente de Mounjaro (sem conteúdo do Mounjaro)",
+      "ok": true,
+      "ms": 285
+    },
+    {
+      "nome": "Migração do formato antigo (localStorage → IndexedDB)",
+      "ok": true,
+      "ms": 1000
+    },
+    {
+      "nome": "Responsividade mobile (320/375/414/768) e letra ≥16 px",
+      "ok": true,
+      "ms": 1548
+    },
+    {
+      "nome": "Contraste AA (modo claro e escuro)",
+      "ok": true,
+      "ms": 1049
+    },
+    {
+      "nome": "Conteúdo proibido ausente (dose, diagnóstico, IA, imagem, código de ativação)",
+      "ok": true,
+      "ms": 5
+    },
+    {
+      "nome": "Português do Brasil e textos (sem termos de Portugal visíveis)",
+      "ok": true,
+      "ms": 1693
+    },
+    {
+      "nome": "Site público: carrega, CSP sem violações, link para o app",
+      "ok": true,
+      "ms": 499
+    },
+    {
+      "nome": "Versão anterior (/antigo/): página de transição, exportação, sem conversor de dose publicado",
+      "ok": true,
+      "ms": 976
+    },
+    {
+      "nome": "20 Consola sem erros",
+      "ok": true,
+      "ms": 0
+    }
+  ]
+}

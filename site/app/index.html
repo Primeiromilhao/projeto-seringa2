@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0b5c6b">
 <title>Seringa — seu tratamento organizado</title>
 <link rel="manifest" href="manifest.webmanifest">
@@ -10,19 +12,19 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body class="a-carregar">
 <header class="topo">
   <div class="marca"><img src="icon.svg" alt="" width="28" height="28"> Seringa</div>
-  <button class="link" id="btn-ajuda" aria-label="Ajuda e aviso">ⓘ</button>
+  <button class="link" id="btn-ajuda" aria-label="Sobre e aviso legal">ⓘ</button>
 </header>
 <div id="atualizar" class="faixa" hidden>Nova versão disponível. <button id="btn-atualizar">Atualizar</button></div>
-<main id="ecra" tabindex="-1"></main>
+<main id="ecra" tabindex="-1"><p class="carregar">Carregando…</p></main>
 <nav class="abas" aria-label="Navegação">
-  <button data-ecra="hoje" class="ativa"><span>🏠</span>Hoje</button>
-  <button data-ecra="registrar"><span>➕</span>Registrar</button>
-  <button data-ecra="sintomas"><span>📝</span>Sintomas</button>
-  <button data-ecra="efeitos"><span>💡</span>Efeitos</button>
-  <button data-ecra="mais"><span>☰</span>Mais</button>
+  <button data-ecra="hoje" class="ativa"><span aria-hidden="true">🏠</span>Hoje</button>
+  <button data-ecra="registrar"><span aria-hidden="true">➕</span>Registrar</button>
+  <button data-ecra="sintomas"><span aria-hidden="true">📝</span>Sintomas</button>
+  <button data-ecra="efeitos"><span aria-hidden="true">💡</span>Efeitos</button>
+  <button data-ecra="mais"><span aria-hidden="true">☰</span>Mais</button>
 </nav>
 <div id="aviso-toast" class="toast" role="status" aria-live="polite"></div>
 <script src="../conteudo.js"></script>

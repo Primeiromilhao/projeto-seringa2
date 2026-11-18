@@ -1,9 +1,12 @@
 name: Deploy Seringa to GitHub Pages
 
-# Publicação ÚNICA do site + app do Seringa (18/11/2026).
-#   /          -> site novo (pasta site/)
+# Publicação ÚNICA do site + app do Seringa (MVP final, 18/11/2026).
+#   /          -> site (pasta site/)
 #   /app/      -> app PWA (instala a partir do site, atualiza sozinho)
-#   /antigo/   -> versão anterior (frontend/static), guardada para quem ainda a usa
+#   /antigo/   -> página de transição: deixa baixar os dados da versão anterior e desativa o service worker antigo.
+#                 A versão anterior (frontend/static) NÃO é publicada: tinha conversão de dose e portão de ativação,
+#                 proibidos pelo Documento do Produto v1.1. O código fica guardado no repositório e no branch backup/pre-mvp-final-2026-11-18.
+#   site/testes/ -> testes automáticos (node site/testes/executar.js); não são publicados.
 on:
   push:
     branches: [main]
@@ -28,9 +31,9 @@ jobs:
         shell: bash
         run: |
           rm -rf _publicar
-          mkdir -p _publicar/antigo
+          mkdir -p _publicar
           cp -R site/. _publicar/
-          cp -R frontend/static/. _publicar/antigo/
+          rm -rf _publicar/testes
           touch _publicar/.nojekyll
           echo site-pronto
       - name: Configure Pages

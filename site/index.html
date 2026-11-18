@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0b5c6b">
 <title>Seringa — informação e organização para quem usa canetas injetáveis</title>
 <meta name="description" content="Seringa: app gratuito para organizar o tratamento com canetas injetáveis (como o Mounjaro), lidar com os efeitos com informação de fonte oficial e chegar à consulta preparado.">
@@ -48,10 +50,10 @@
   <h2>O que o app faz por você</h2>
   <div class="grelha">
     <div class="card"><span>💉</span><h3>Registro em segundos</h3><p>Toque no local do corpo e confirme. Nunca mais fique na dúvida se já aplicou.</p></div>
-    <div class="card"><span>🗺️</span><h3>Mapa do corpo</h3><p>Mostra onde aplicou da última vez, para variar o local como a bula orienta.</p></div>
-    <div class="card"><span>⏰</span><h3>Lembrete da próxima</h3><p>Conforme o que o seu médico prescreveu — direto no calendário do celular.</p></div>
+    <div class="card"><span>🗺️</span><h3>Mapa do corpo</h3><p>Mostra onde e quando aplicou em cada local, para variar o local como a bula orienta.</p></div>
+    <div class="card"><span>⏰</span><h3>Lembrete e calendário</h3><p>Conforme o que o seu médico prescreveu: um calendário no app e um lembrete com alarme no calendário do celular.</p></div>
     <div class="card"><span>📝</span><h3>Como estou</h3><p>Anote enjoo, intestino, cansaço… Se marcar um sinal de alerta, o app avisa na hora.</p></div>
-    <div class="card"><span>💡</span><h3>Efeitos e cuidados</h3><p>O que pode acontecer, o que pode ajudar e quando procurar atendimento — com fonte.</p></div>
+    <div class="card"><span>💡</span><h3>Efeitos e cuidados</h3><p>O que pode acontecer e quando procurar atendimento, segundo a bula — com fonte.</p></div>
     <div class="card"><span>📄</span><h3>Relatório da consulta</h3><p>Aplicações, sintomas, peso e suas dúvidas, prontos para mostrar ao médico.</p></div>
   </div>
 </section>
@@ -89,33 +91,19 @@
 
 <section id="privacidade" class="largura">
   <h2>Privacidade</h2>
-  <p>Seus registros ficam <b>apenas no seu celular</b>. Não pedimos CPF nem morada, não enviamos seus dados de saúde para servidores, não vendemos dados e não usamos publicidade. Você pode baixar uma cópia ou apagar tudo a qualquer momento, no próprio app.</p>
+  <p>Seus registros (medicamento, aplicações, sintomas, peso e dúvidas) ficam <b>apenas no seu celular</b>, salvos com criptografia. O Seringa não tem servidor de dados: não pedimos nome, CPF, endereço nem e-mail, não enviamos seus dados de saúde para lugar nenhum, não vendemos dados e não usamos publicidade nem rastreadores.</p>
+  <p>Os dados servem só para organizar o seu tratamento: lembrar, mostrar o histórico e montar o relatório para a consulta. No próprio app você pode baixar uma cópia, restaurá-la em outro celular ou apagar tudo a qualquer momento.</p>
+  <p class="fonte">Importante: quem usar o seu celular desbloqueado consegue abrir o app. Use bloqueio de tela. Se limpar os dados do navegador sem ter uma cópia, os registros são perdidos.</p>
 </section>
 
 <footer>
   <div class="largura">
     <p><b>Aviso importante:</b> o Seringa é uma ferramenta de organização e informação. Não calcula nem orienta doses, não faz diagnóstico e não substitui o médico. Use qualquer medicamento somente com prescrição e acompanhamento profissional. Em urgência, ligue <b>192 (SAMU)</b>.</p>
+    <p>Seringa é um produto <b>BFAVORE</b>.</p>
     <p class="fonte">Conteúdo de saúde baseado na bula do medicamento (Anvisa) e em fontes oficiais, com data de revisão. Versão do conteúdo: <span id="versao"></span>.</p>
   </div>
 </footer>
 <script src="conteudo.js"></script>
-<script>
-(function(){
-  var C = window.SERINGA_CONTEUDO; if(!C) return;
-  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]});}
-  function fonte(ks){return ks.map(function(k){var f=C.fontes[k];return f?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener">'+esc(f.nome)+'</a>':"";}).join(" · ");}
-  document.getElementById("alertas").innerHTML='<strong>⚠ Procure atendimento se:</strong><ul>'+C.alertas.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+'</ul>';
-  document.getElementById("lista-efeitos").innerHTML=C.efeitos.map(function(e){
-    return '<div class="card"><h3>'+e.icone+' '+esc(e.titulo)+'</h3><p>'+esc(e.oque)+'</p>'+
-      (e.ajuda.length?'<p><b>O que pode ajudar:</b></p><ul>'+e.ajuda.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+'</ul>':"")+
-      (e.alerta?'<p class="ponto">⚠ '+esc(e.alerta)+'</p>':"")+'</div>';}).join("");
-  document.getElementById("fontes-efeitos").innerHTML="Fontes: "+fonte(["bula","lilly"]);
-  document.getElementById("lista-sus").innerHTML=C.sus.map(function(p){return "<p>"+esc(p)+"</p>";}).join("");
-  document.getElementById("fonte-sus").innerHTML="Fonte: "+fonte(["ms"]);
-  document.getElementById("lista-avisos").innerHTML=C.avisos.slice().sort(function(a,b){return b.data.localeCompare(a.data);}).map(function(a){
-    return '<div class="aviso"><time>'+new Date(a.data+"T12:00").toLocaleDateString("pt-BR")+'</time><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.texto)+'</p>'+(a.fonte?'<p class="fonte">Fonte: '+fonte([a.fonte])+'</p>':"")+'</div>';}).join("");
-  document.getElementById("versao").textContent=new Date(C.versao+"T12:00").toLocaleDateString("pt-BR");
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
